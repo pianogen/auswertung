@@ -59,6 +59,10 @@ class mdl_search {
 		return $array;
 	}
 	
+	public function __destruct(){
+		sqlsrv_close($this->con);
+	}
+	
 }	
 
 

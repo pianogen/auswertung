@@ -22,5 +22,16 @@ class updates {
 	
 	public function Speichern() {
 		$save = $this->update->save();
+		include_once 'view/view_updates.php';
+	}
+	
+	public function update() {
+		$this->update->update();
+	}
+	
+	public function delete() {
+		$this->update->delete();
+		header("Location: index.php?ctrl=search");
+		exit(0);
 	}
 }
