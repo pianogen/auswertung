@@ -25,8 +25,8 @@ class resolver {
 			header("Location: index.php");
 			exit(0);
 		}
-	if (!isset($this->get['action'])) {
-			include_once "view\".$this->get['ctrl']";
+		if (!isset($this->get['action'])) {
+			$this->get['action'] = "view";
 		}
 		//include the model, create an instance and push it to the controller
 		//more error handling is needed
