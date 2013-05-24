@@ -11,11 +11,13 @@ class updates {
 	
 	public function view(){
 		$button = "Speichern";
+		$packages = $this->update->getPackages();
 		include_once 'view/view_updates.php';
 	}
 	
 	public function select() {
-		$update = $this->update->findId();
+		$updates = $this->update->findId();
+		$packages = $this->update->packagesToUpdate();
 		$button = "Update";
 		include_once 'view/view_updates.php';
 	}

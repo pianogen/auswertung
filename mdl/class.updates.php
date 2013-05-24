@@ -19,6 +19,31 @@ class mdl_updates {
 		}
 		return (sqlsrv_fetch_array($res, SQLSRV_FETCH_NUMERIC));
 	}
+	public function packagesToUpdate(){
+		$sql = "Select P.* from dbo.updates U, dbo.package P, dbo.updates_packages UP WHERE U.Id = ? AND UP.updateId = U.Id AND P.id = UP.packageId";
+		$params = array($_GET['id']);
+		$res = sqlsrv_query($this->con,$sql,$params);
+		if ($res === false) {
+			die (print_r(sql_srv_errors(), true));
+		}
+		while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)){
+			$array[] = $row;
+		}
+		return $array;
+		
+	}
+	
+	public function getPackages() {
+		$sql = "Select * from dbo.package";
+		$res = sqlsrv_query($this->con, $sql);
+		if ($res === false) {
+			die (print_r(sql_srv_errors(), true));
+		}
+		while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)){
+			$array[] = $row;
+		}
+		return $array;
+	}
 	
 	public function save() {
 		$sql = "INSERT into dbo.updates (Name,kb,release,decline,approve_clt,approve_srv)

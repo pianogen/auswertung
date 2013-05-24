@@ -23,10 +23,10 @@ $resolver = new resolver();
 				<a href="index.php?ctrl=search" style="color:white; text-decoration:none; padding: 20px 0px 0px 10px;">Suchen</a>
 			</div>
 			<div style="padding: 20px 0px 0px 10px;">
-				<a href="index.php?ctrl=updates" style="color:white; text-decoration:none; padding: 20px 0px 0px 10px;">Update Management</a>
+				<a href="index.php?ctrl=updates" style="color:white; text-decoration:none; padding: 20px 0px 0px 10px;">Update hinzufügen</a>
 			</div>
 			<div style="padding: 20px 0px 0px 10px;">
-				<a href="index.php?ctrl=packages" style="color:white; text-decoration:none; padding: 20px 0px 0px 10px;">Package Management</a>
+				<a href="index.php?ctrl=packages" style="color:white; text-decoration:none; padding: 20px 0px 0px 10px;">Package hinzufügen</a>
 			</div>
 		</div>
 		<div id="content" style="padding: 20px 0px 0px 10px;">

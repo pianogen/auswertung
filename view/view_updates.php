@@ -1,5 +1,5 @@
-<?php if ($button == "Update") {
-$url = "index.php?ctrl=updates&action=$button&id=$update[0]";
+<?php if ($button === "Update") {
+$url = "index.php?ctrl=updates&action=$button&id=$updates[0]";
 }
 else {
 $url = "index.php?ctrl=updates&action=$button";
@@ -10,19 +10,19 @@ $url = "index.php?ctrl=updates&action=$button";
 <table>
 	<tr>
 		<td>Name</td>
-		<td><input type="text" value="<?php echo $update[1]; ?>" name="Name"></td>
+		<td><input type="text" value="<?php echo $updates[1]; ?>" name="Name"></td>
 	</tr>
 	<tr>
 		<td>KB</td>
-		<td><input type="text" value="<?php echo $update[2]; ?>" name="kb"></td>
+		<td><input type="text" value="<?php echo $updates[2]; ?>" name="kb"></td>
 	</tr>
 	<tr>
-		<td>Relase</td>
-		<td><input type="text" value="<?php echo $update[3]; ?>" name="release"></td>
+		<td>Release</td>
+		<td><input type="text" value="<?php echo $updates[3]; ?>" name="release"></td>
 	</tr>
 	<tr>
 		<td>Decline</td>
-		<td><input type="text" value="<?php echo $update[4]; ?>" name="decline"></td>
+		<td><input type="text" value="<?php echo $updates[4]; ?>" name="decline"></td>
 	</tr>
 </table>
 </div>
@@ -33,7 +33,15 @@ $url = "index.php?ctrl=updates&action=$button";
 	</tr>
 	<tr>
 		<td>Approvement Date</td>
-		<td><input type="text" value="<?php echo $update[5];?>" name="approve_clt"></td>
+		<td><input type="text" value="<?php echo $updates[5];?>" name="approve_clt"></td>
+	</tr>
+	<tr>
+	<?php foreach ($packages as $package) {
+		if ($package['typeId'] === 1) { ?>
+	<tr>
+		<td><input type="checkbox" value="<?php echo $package['Id'] ?>" name="srv"><?php echo $package['name'];?></td>
+	</tr>
+	<?php } }?>
 	</tr>
 </table>
 </div>
@@ -44,18 +52,28 @@ $url = "index.php?ctrl=updates&action=$button";
 	</tr>
 	<tr>
 		<td>Approvement Date</td>
-		<td><input type="text" value="<?php echo $update[6];?>" name="approve_srv"></td>
+		<td><input type="text" value="<?php echo $updates[6];?>" name="approve_srv"></td>
 	</tr>
+	<?php foreach ($packages as $package) {
+		if ($package['typeId'] === 2) { ?>
+	<tr>
+		<td><input type="checkbox" value="<?php echo $package['Id'] ?>" name="srv"><?php echo $package['name'];?></td>
+	</tr>
+	<?php } }?>
 </table>
 </div>
-<div style="float: right; padding: 20px 150px 0px 0px;">
+<div style="float: right; padding: 20px 365px 0px 0px;">
 <table>
 	<tr>
 		<td><input type="submit" value=<?php echo $button ?>></td>
 		<td><a href = "index.php"><button>Zurück</button></a></td>
 <?php if ($button === "Update") {?> 
-		<td><a href = "index.php?ctrl=updates&action=delete&id=<?php echo $update[0]?>"><button>L&ouml;schen</button></a></td>
+		<td><a href = "index.php?ctrl=updates&action=delete&id=<?php echo $updates[0]?>"><button>L&ouml;schen</button></a></td>
+<?php }
+else {?>
+<td><input type="reset" value="Zur&uuml;setzen"></td>
 <?php }?>
+
 	</tr>
 </table>
 </div>

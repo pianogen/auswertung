@@ -9,7 +9,7 @@ class search {
 	}
 	
 	public function view(){
-		$updates = $this->search->findAll();
+		$updates = $this->search->findAllUpdates();
 		include_once 'view/view_search.php';
 	}
 }
