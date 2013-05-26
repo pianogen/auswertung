@@ -7,7 +7,6 @@ class updates {
 	public function __construct( mdl_updates $mdl, resolver $resolver){
 		$this->update = $mdl;
 		$this->resovler = $resolver;
-		$title = "Update Manamgenent";
 	}
 	
 	public function view(){

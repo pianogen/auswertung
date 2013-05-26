@@ -6,22 +6,23 @@ class packages {
 	public function __construct(mdl_packages $mdl, resolver $resolver){
 		$this->package = $mdl;
 		$this->resovler = $resovler;
-		$title = "Package Management";
 	}
 	
 	public function view() {
+		$button = "Speichern";
 		$types = $this->package->getTypes();
 		include "view/view_packages.php";
 	}
 	
 	public function select() {
+		$button = "Update";
 		$packages = $this->package->getSpecificPackage();
 		$updates = $this->package->updatesToPackages();
 		$types = $this->package->getTypes();
 		include_once 'view/view_packages.php';
 	}
 	
-	public function save() {
+	public function speichern() {
 		$res = $this->package->save();
 	}
 	

@@ -1,6 +1,15 @@
 <?php 
 include_once 'class.resolver.php';
 $resolver = new resolver();
+if ($_GET['ctrl'] === "search"){
+	$title = " - Suche";
+}
+if ($_GET['ctrl'] === "updates"){
+	$title = " - Update Mutation";
+}
+if ($_GET['ctrl'] === "packages"){
+	$title = " - Package Mutation";
+}
 ?>
 <html>
 	<head>
@@ -33,7 +42,7 @@ $resolver = new resolver();
 			</div>
 		</div>
 		<div id="header">
-			<h1>WSUS Auswertung - <?php echo $title; ?></h1>
+			<h1>WSUS Auswertung<?php echo $title; ?></h1>
 		</div>
 		<div id="content">
 			<?php 

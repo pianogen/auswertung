@@ -2,30 +2,39 @@
 $url = "index.php?ctrl=packages&action=$button&id=$packages[id]";
 }
 else {
-$url = "index.php?ctrl=updates&action=$button";
+$url = "index.php?ctrl=packages&action=$button";
 } ?>
 <form action="<?php echo $url ?>" method="POST">
 <div style="padding: 0px 0px 20px 0px; float:left;">
 <table>
 	<tr>
 		<td>Name</td>
-		<td><input type="text" value="<?php echo $packages['name']; ?>" name="Name"></td>
+		<td><input type="text" value="<?php echo $packages['name']; ?>" name="name"></td>
 	</tr>
 	<tr>
 		<td>Typ</td>
 		<td><select name ="type" >
 		<?php foreach ($types as $type) {
-			if ($type['id'] === $packages['typeID'] ) { ?>		
-				<option value=<?php echo $type['typeID'] ?> selected><?php echo $type['type']; ?></option>
+			if ($type['id'] === $packages['typeId'] ) { ?>		
+				<option value=<?php echo $type['id'] ?> selected><?php echo $type['type']; ?></option>
 	<?php  }
 			else { ?>
-				<option value=<?php echo $type['typeID'] ?>><?php echo $type['type']; ?></option>
+				<option value=<?php echo $type['id'] ?>><?php echo $type['type']; ?></option>
 <?php 		}
 		} ?>
+		</select>
+		</td>
 	</tr>
 	<tr>
 		<th colspan="2" align="right">
-			<input type="submit" value="Speichern">
+			<input type="submit" value="<?php echo $button?>">
+			<?php if ($button === "Update"){ ?>
+				<input type="button" onclick="window.location.href = 'index.php?ctrl=packages&action=delete&id=<?php echo $packages['id']?>';" value="Löschen"></td>
+	<?php 	}
+			else { ?>
+				<input type="reset" value="Zur&uuml;setzen">
+	<?php 	}?>
+			<input type="button" onclick="window.location.href = 'index.php';" value="Zurück">
 		</th>
 	</tr>
 </table>
@@ -67,4 +76,6 @@ else { ?>
 <?php $i=$i+1;} ?>
 </table>
 </div>
+
 <?php }?>
+</form>

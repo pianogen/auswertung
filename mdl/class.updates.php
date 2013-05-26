@@ -81,7 +81,7 @@ class mdl_updates {
 		$delete = "DELETE FROM dbo.updates_packages WHERE packageId = ? AND updateId = ?";
 		$insert = "INSERT INTO dbo.updates_packages (packageId, updateId) VALUES (?,?)";
 		$this->emptyDates();
-		$params = array_values($_POST);
+		$params = array($_POST['name'],$_POST['kb'],$_POST['release'],$_POST['decline'],$_POST['approve_clt'],$_POST['approve_srv']);
 		array_push($params, $_GET['id']);
 		$res = sqlsrv_query($this->con,$sql,$params);
 		foreach ($_POST['unappr'] as $unappr){

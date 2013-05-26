@@ -13,7 +13,7 @@ class mdl_search {
 	}
 	public function findAllUpdates(){
 		$array= array();
-		$sql = "Select id,Name,kb, convert(char(10),release,104),convert(char(10),decline,104),convert(char(10),approve_clt,104),convert(char(10),approve_srv,104) from dbo.updates order by release DESC";
+		$sql = "Select TOP 100 id,Name,kb, convert(char(10),release,104),convert(char(10),decline,104),convert(char(10),approve_clt,104),convert(char(10),approve_srv,104) from dbo.updates order by release DESC";
 		$res = sqlsrv_query($this->con,$sql);
 		if ($res === false){
 			die (print_r (sqlsrv_errors(), true));
@@ -42,7 +42,7 @@ class mdl_search {
 		return $array;
 		
 	}
-	public function findByKB($kb){
+	public function findUpdateByKeyword($kb){
 		$sql = "Select * from dbo.updates where kb = $kb";
 		$res = sqlsrv_query($this->con, $sql);
 		if ($res === false) {

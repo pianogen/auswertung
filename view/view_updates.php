@@ -25,6 +25,18 @@ $url = "index.php?ctrl=updates&action=$button";
 		<td>Decline</td>
 		<td><input type="text" value="<?php echo $updates[4]; ?>" name="decline"></td>
 	</tr>
+	<tr>
+		<th colspan="2">
+			<input type="submit" value=<?php echo $button ?>>
+			<input type="button" onclick="window.location.href = 'index.php';" value="Zurück">
+<?php 		if ($button === "Update") {?> 
+				<input type="button" onclick="window.location.href = 'index.php?ctrl=updates&action=delete&id=<?php echo $updates[0]?>';" value="Löschen">
+<?php 		}
+			else {?>
+				<input type="reset" value="Zur&uuml;setzen">
+			<?php }?>
+		</th>
+	</tr>
 </table>
 </div>
 <div style="padding:20px 50px 0px 0px; float:left;">
@@ -85,17 +97,5 @@ $url = "index.php?ctrl=updates&action=$button";
 </table>
 </div>
 <div style="float:right; padding:100px 330px 0px 0px;">
-<table>
-	<tr>
-		<td><input type="submit" value=<?php echo $button ?>></td></form>
-		<td><input type="button" onclick="window.location.href = 'index.php';" value="Zurück">
-<?php if ($button === "Update") {?> 
-		<td><input type="button" onclick="window.location.href = 'index.php?ctrl=updates&action=delete&id=<?php echo $updates[0]?>';" value="Löschen"></td>
-<?php }
-else {?>
-<td><input type="reset" value="Zur&uuml;setzen"></td>
-<?php }?>
-
-	</tr>
-</table>
 </div>
+</form>

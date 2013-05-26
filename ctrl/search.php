@@ -6,7 +6,6 @@ class search {
 	public function __construct( mdl_search $mdl, resolver $resolver){
 		$this->search = $mdl;
 		$this->resovler = $resolver;
-		$title = "Suche";
 	}
 	
 	public function view(){

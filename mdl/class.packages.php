@@ -48,30 +48,34 @@ class mdl_packages {
 	}
 	
 	public function save(){
-		$sql = "INSERT INTO dbo.package name, typeID VALUES (?, ?)";
-		$params = array(array_values($_POST));
+		$sql = "INSERT INTO dbo.package (name, typeId) VALUES (?, ?)";
+		$params = array_values($_POST);
 		$res = sqlsrv_query($this->con, $sql,$params);
+		if (!$res) {
+			die(print_r(sqlsrv_errors(), true));
+		}
 		return $res;		
 	}
 	
 	public function update() {
-		$sql = "UPDATE dbo.package SET name = ?, typeID = ?";
-		$params = array(array_values($_POST));
+		$sql = "UPDATE dbo.package SET name = ?, typeID = ? WHERE id= ?";
+		$params = array_values($_POST);
+		array_push($params, $_GET['id']);
 		$res = sqlsrv_query($this->con, $sql,$params);
 		return $res;
 	}
 	
 	public function delete() {
-		$params = arary($_GET['id']);
-		$sql1 = "DELETE FROM dbo.updates_packages WHERE packageID=?";
+		$params = array($_GET['id']);
+		$sql1 = "DELETE FROM dbo.updates_packages WHERE packageId=?";
 		if (sqlsrv_query($this->con, $sql1, $params)){
 			$sql2 = "DELETE FROM dbo.package WHERE id = ?";
 			if (!sqlsrv_query($this->con, $sql2, $params)){
-				die (print_r(sql_srv_errors(), true));
+				die (print_r(sqlsrv_errors(), true));
 			}
 		}
 		else {
-			die (print_r(sql_srv_errors(), true));
+			die (print_r(sqlsrv_errors(), true));
 		}
 		return $res;
 	}
