@@ -24,7 +24,7 @@ class mdl_packages {
 	}
 	
 	public function updatesToPackages() {
-		$sql = "Select U.id, U.Name, U.kb, convert(char(10),U.release,104),convert(char(10),U.decline,104),convert(char(10),U.approve_clt,104),convert(char(10),U.approve_srv,104)from dbo.updates U, dbo.package P, dbo.updates_packages UP WHERE P.id = ? AND UP.packageId = P.id AND U.Id = UP.updateId";
+		$sql = "Select U.id, U.Name, U.kb, convert(char(10),U.release,104),convert(char(10),U.decline,104),convert(char(10),U.approve_clt,104),convert(char(10),U.approve_srv,104)from dbo.updates U, dbo.package P, dbo.updates_packages UP WHERE P.id = ? AND UP.packageId = P.id AND U.Id = UP.updateId order by U.release DESC";
 		$params = array($_GET['id']);
 		$res = sqlsrv_query($this->con,$sql,$params);
 		if ($res === false) {
@@ -62,9 +62,17 @@ class mdl_packages {
 	}
 	
 	public function delete() {
-		$sql = "DELETE FROM dbo.package WHERE id = ?";
 		$params = arary($_GET['id']);
-		$res = sqlsrv_query($this->con, $sql,$params);
+		$sql1 = "DELETE FROM dbo.updates_packages WHERE packageID=?";
+		if (sqlsrv_query($this->con, $sql1, $params)){
+			$sql2 = "DELETE FROM dbo.package WHERE id = ?";
+			if (!sqlsrv_query($this->con, $sql2, $params)){
+				die (print_r(sql_srv_errors(), true));
+			}
+		}
+		else {
+			die (print_r(sql_srv_errors(), true));
+		}
 		return $res;
 	}
 	

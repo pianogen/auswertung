@@ -7,32 +7,33 @@ class updates {
 	public function __construct( mdl_updates $mdl, resolver $resolver){
 		$this->update = $mdl;
 		$this->resovler = $resolver;
+		$title = "Update Manamgenent";
 	}
 	
 	public function view(){
 		$button = "Speichern";
-		$packages = $this->update->getPackages();
+		$noPack = $this->update->getPackages();
 		include_once 'view/view_updates.php';
 	}
 	
 	public function select() {
 		$updates = $this->update->findId();
 		$packages = $this->update->packagesToUpdate();
+		$noPack = $this->update->otherPackages();
 		$button = "Update";
 		include_once 'view/view_updates.php';
 	}
 	
 	public function Speichern() {
-		$save = $this->update->save();
-		include_once 'view/view_updates.php';
+		$res = $this->update->save();
 	}
 	
 	public function update() {
-		$this->update->update();
+		$res = $this->update->update();
 	}
 	
 	public function delete() {
-		$this->update->delete();
+		$res = $this->update->delete();
 		header("Location: index.php?ctrl=search");
 		exit(0);
 	}

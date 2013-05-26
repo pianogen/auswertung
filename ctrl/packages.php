@@ -6,17 +6,31 @@ class packages {
 	public function __construct(mdl_packages $mdl, resolver $resolver){
 		$this->package = $mdl;
 		$this->resovler = $resovler;
+		$title = "Package Management";
 	}
 	
 	public function view() {
 		$types = $this->package->getTypes();
 		include "view/view_packages.php";
 	}
+	
 	public function select() {
 		$packages = $this->package->getSpecificPackage();
 		$updates = $this->package->updatesToPackages();
 		$types = $this->package->getTypes();
 		include_once 'view/view_packages.php';
+	}
+	
+	public function save() {
+		$res = $this->package->save();
+	}
+	
+	public function update() {
+		$res = $this->package->update();
+	}
+	
+	public function delete() {
+		$delete = $this->package->delete();
 	}
 }
 
