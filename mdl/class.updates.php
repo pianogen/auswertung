@@ -126,32 +126,7 @@ class mdl_updates {
 		}
 		return "Update wurde erfolgreicht gelöscht";	
 	}
-	
-	public function validate() {
-		if ($_POST['release'] != ""){
-			$date = explode(".",$_POST['release']);
-			if (var_dump(checkdate($date[1], $date[0], $date[2]))){
-				if (is_numeric($_POST['kb'])){
-					if($_POST['name'] != ""){
-						return true;
-					}
-					else {
-						return false;
-					}
-				}
-				else {
-					return false;
-				}
-			}
-			else {
-				return false;
-			}
-		}
-		else {
-			return false;
-		}
-	}
-	
+		
 	public function __destruct(){
 		sqlsrv_close($this->con);	
 	}
