@@ -77,7 +77,6 @@ class mdl_updates {
 	}
 	
 	public function update(){
-		if ($this->validate()){
 			$sql = "UPDATE dbo.updates SET Name=?, kb=?, release=?, decline=?, approve_clt=?, approve_srv=? WHERE Id =?";
 			$delete = "DELETE FROM dbo.updates_packages WHERE packageId = ? AND updateId = ?";
 			$insert = "INSERT INTO dbo.updates_packages (packageId, updateId) VALUES (?,?)";
@@ -94,10 +93,6 @@ class mdl_updates {
 				sqlsrv_query($this->con,$delete,$params);
 			}
 			return $res;
-		}
-		else {
-			return "Update fehlgeschlagen";
-		}
 	}
 	
 	public function emptyDates(){
@@ -122,7 +117,7 @@ class mdl_updates {
 			}
 		}
 		else {
-			die (print_r(sql_srv_errors(), true));
+			die (print_r(sqlsrv_errors(), true));
 		}
 		return "Update wurde erfolgreicht gelöscht";	
 	}

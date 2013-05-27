@@ -11,7 +11,7 @@ $url = "index.php?ctrl=updates&action=$button";
 <table>
 	<tr>
 		<td>Name</td>
-		<td><input type="text" value="<?php echo $updates[1]; ?>" name="name"></td>
+		<td><input type="text" value="<?php echo $updates[1]; ?>" name="name" size="100"></td>
 	</tr>
 	<tr>
 		<td>KB</td>
@@ -26,7 +26,7 @@ $url = "index.php?ctrl=updates&action=$button";
 		<td><input type="text" value="<?php echo $updates[4]; ?>" name="decline"></td>
 	</tr>
 	<tr>
-		<th colspan="2">
+		<th colspan="2" align="right">
 			<input type="submit" value=<?php echo $button ?>>
 			<input type="button" onclick="window.location.href = 'index.php';" value="Zurück">
 <?php 		if ($button === "Update") {?> 
@@ -78,14 +78,14 @@ $url = "index.php?ctrl=updates&action=$button";
 		<td>Approvement Date</td>
 		<td><input type="text" value="<?php echo $updates[6]?>" name="approve_srv"></td>
 	</tr>
-	<?php $j =0;
+	<?php 
 	foreach ($packages as $package) {
 		if ($package['typeId'] === 2) { ?>
 	<tr>
-		<td><input type="hidden" value="<?php echo $package['id'] ?>" name="appr[<?php echo $j?>]">
-		<input type="checkbox"  name="appr[<?php echo $j ?>]" CHECKED><?php echo $package['name'];?></td>
+		<td><input type="hidden" value="<?php echo $package['id'] ?>" name="appr[<?php echo $i?>]">
+		<input type="checkbox"  name="appr[<?php echo $i ?>]" CHECKED><?php echo $package['name'];?></td>
 	</tr>
-	<?php $j = $j+1;
+	<?php $i = $i+1;
 		} 
 	}
 	foreach ($noPack as $pack){

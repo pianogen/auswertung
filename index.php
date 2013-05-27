@@ -21,6 +21,7 @@ if ($_GET['ctrl'] === "packages"){
 		 #header { float: left; background: #527DE5; color:white; top:0px; left:200px; position:absolute; width:1200px;  height:100px; vertical-align: middle;}
 		 #body { font-family: arial; }
 		 #error { visibility:hidden; color: red; font-size: 12px; float: left; position:absolute; left: 10px; top:252px; display:inline; }
+		 #separate { text-align: right; font-size: 12px; }
 		 h1 { font-family: arial; }
 		 .input { border: 1px solid #527DE5;}
 		 table.result {border-collapse:collapse; padding:10px; } 

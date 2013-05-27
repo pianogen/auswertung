@@ -5,12 +5,12 @@
 		<th colspan="2" align="left"><b>Nach Updates suchen</b></th>
 	</tr>
 	<tr>
-		<td>KB</td>
-		<td><input type="text" name="kb" id="kb" onblur="kbValidate();"></td>
+		<td>Titel</td>
+		<td><input type="text" size="50" name="titel" id="titel" onblur="titelValidate();"></td>
 	</tr>
 	<tr>
-		<td>Titel</td>
-		<td><input type="text" name="titel" id="titel" onblur="titelValidate();"></td>
+		<td>KB</td>
+		<td><input type="text" name="kb" id="kb" onblur="kbValidate();"></td>
 	</tr>
 	<tr>
 		<td>Release</td>
@@ -24,7 +24,7 @@
 </form>
 
 </div>
-<div id="search" style="padding: 0px 500px 20px 0px; float:right";>
+<div id="search" style="float:left; left:550px; position:absolute;">
 <form action="index.php?ctrl=search&action=specificPackage" method="post" name="search">
 <table class="input">
 	<tr>
@@ -32,7 +32,7 @@
 	</tr>
 	<tr>
 		<td>Titel</td>
-		<td><input type="text" name="name"></td>
+		<td><input type="text" name="name" size="50"></td>
 	</tr>
 	<tr>
 		<td style="padding-bottom:26px;">Typ</td>
