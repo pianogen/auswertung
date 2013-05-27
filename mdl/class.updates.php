@@ -77,22 +77,27 @@ class mdl_updates {
 	}
 	
 	public function update(){
-		$sql = "UPDATE dbo.updates SET Name=?, kb=?, release=?, decline=?, approve_clt=?, approve_srv=? WHERE Id =?";
-		$delete = "DELETE FROM dbo.updates_packages WHERE packageId = ? AND updateId = ?";
-		$insert = "INSERT INTO dbo.updates_packages (packageId, updateId) VALUES (?,?)";
-		$this->emptyDates();
-		$params = array($_POST['name'],$_POST['kb'],$_POST['release'],$_POST['decline'],$_POST['approve_clt'],$_POST['approve_srv']);
-		array_push($params, $_GET['id']);
-		$res = sqlsrv_query($this->con,$sql,$params);
-		foreach ($_POST['unappr'] as $unappr){
-			$params = array($unappr, $_GET['id']);
-			sqlsrv_query($this->con,$insert,$params);
+		if ($this->validate()){
+			$sql = "UPDATE dbo.updates SET Name=?, kb=?, release=?, decline=?, approve_clt=?, approve_srv=? WHERE Id =?";
+			$delete = "DELETE FROM dbo.updates_packages WHERE packageId = ? AND updateId = ?";
+			$insert = "INSERT INTO dbo.updates_packages (packageId, updateId) VALUES (?,?)";
+			$this->emptyDates();
+			$params = array($_POST['name'],$_POST['kb'],$_POST['release'],$_POST['decline'],$_POST['approve_clt'],$_POST['approve_srv']);
+			array_push($params, $_GET['id']);
+			$res = sqlsrv_query($this->con,$sql,$params);
+			foreach ($_POST['unappr'] as $unappr){
+				$params = array($unappr, $_GET['id']);
+				sqlsrv_query($this->con,$insert,$params);
+			}
+			foreach ($_POST['appr'] as $appr) {
+				$params = array($appr, $_GET['id']);
+				sqlsrv_query($this->con,$delete,$params);
+			}
+			return $res;
 		}
-		foreach ($_POST['appr'] as $appr) {
-			$params = array($appr, $_GET['id']);
-			sqlsrv_query($this->con,$delete,$params);
+		else {
+			return "Update fehlgeschlagen";
 		}
-		return $res;
 	}
 	
 	public function emptyDates(){
@@ -120,6 +125,31 @@ class mdl_updates {
 			die (print_r(sql_srv_errors(), true));
 		}
 		return "Update wurde erfolgreicht gelöscht";	
+	}
+	
+	public function validate() {
+		if ($_POST['release'] != ""){
+			$date = explode(".",$_POST['release']);
+			if (var_dump(checkdate($date[1], $date[0], $date[2]))){
+				if (is_numeric($_POST['kb'])){
+					if($_POST['name'] != ""){
+						return true;
+					}
+					else {
+						return false;
+					}
+				}
+				else {
+					return false;
+				}
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
 	}
 	
 	public function __destruct(){

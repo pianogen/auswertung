@@ -13,7 +13,7 @@ class mdl_search {
 	}
 	public function findAllUpdates(){
 		$array= array();
-		$sql = "Select TOP 100 id,Name,kb, convert(char(10),release,104),convert(char(10),decline,104),convert(char(10),approve_clt,104),convert(char(10),approve_srv,104) from dbo.updates order by release DESC";
+		$sql = "SELECT TOP 100 id,Name,kb, CONVERT(char(10),release,104),CONVERT(char(10),decline,104),CONVERT(char(10),approve_clt,104),CONVERT(char(10),approve_srv,104) FROM dbo.updates ORDER BY release DESC";
 		$res = sqlsrv_query($this->con,$sql);
 		if ($res === false){
 			die (print_r (sqlsrv_errors(), true));
@@ -29,7 +29,7 @@ class mdl_search {
 			$params = array($_POST['name']."%");
 		}
 		else {
-			$sql = "SELECT P.*, T.type from dbo.package P, dbo.type T WHERE T.type = ? AND T.id = P.typeId";
+			$sql = "SELECT P.*, T.type from dbo.package P, dbo.type T WHERE T.id = ? AND T.id = P.typeId";
 			$params = array($_POST['type']);
 		}
 		$res = sqlsrv_query($this->con,$sql,$params);
@@ -42,43 +42,57 @@ class mdl_search {
 		return $array;
 		
 	}
-	public function findUpdateByKeyword($kb){
-		$sql = "Select * from dbo.updates where kb = $kb";
-		$res = sqlsrv_query($this->con, $sql);
-		if ($res === false) {
-			die (print_r (sql_srv_errors(), true));
+	public function findSpecificUpdates(){
+		if (!empty($_POST['kb'])) {
+			$sql = "SELECT id,Name,kb, CONVERT(char(10),release,104),CONVERT(char(10),decline,104),CONVERT(char(10),approve_clt,104),CONVERT(char(10),approve_srv,104) FROM dbo.updates WHERE kb = ? ORDER BY release DESC";
+			$params = array($_POST['kb']);
+			$res = sqlsrv_query($this->con, $sql,$params);
+			if ($res === false) {
+				die (print_r (sqlsrv_errors(), true));
+			}
+			while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_NUMERIC)){
+				$array[] = $row;
+			}
 		}
-		return (sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC));
-	}
-	
-	public function findByName($name){
-		$array = array();
-		$sql = "Select * from dbo.updates where Name like '%$name%'";
-		$res = sqlsrv_query($this->con, $sql);
-		if ($res === false) {
-			die (print_r(sql_srv_errors(), true));
+		if (!empty($_POST['titel'])){
+			$sql = "SELECT id,Name,kb, CONVERT(char(10),release,104),CONVERT(char(10),decline,104),CONVERT(char(10),approve_clt,104),CONVERT(char(10),approve_srv,104) FROM dbo.updates WHERE Name LIKE ? ORDER BY release DESC";
+			$params = array($_POST['titel']."%");
+			$res = sqlsrv_query($this->con, $sql,$params);
+			if ($res === false) {
+				die (print_r (sqlsrv_errors(), true));
+			}
+			while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_NUMERIC)){
+				$array[] = $row;
+			}
 		}
-		while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)){
-			$array[] = $row;
+		if (!empty($_POST['release'])){
+			$sql = "SELECT id,Name,kb, CONVERT(char(10),release,104),CONVERT(char(10),decline,104),CONVERT(char(10),approve_clt,104),CONVERT(char(10),approve_srv,104) FROM dbo.updates WHERE release=? ORDER BY release DESC";
+			$params = array($_POST['release']);
+			$res = sqlsrv_query($this->con, $sql,$params);
+			if ($res === false) {
+				die (print_r (sqlsrv_errors(), true));
+			}
+			while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_NUMERIC)){
+				$array[] = $row;
+			}
 		}
 		return $array;
 	}
-	
-	public function findByDate($date){
-		$array = array();
-		$sql = "Select * from dbo.updates where release=$date'";
-		$res = sqlsrv_query($this->con, $sql);
-		if ($res === false) {
-			die (print_r(sql_srv_errors(), true));
-		}
-		while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)){
-			$array[] = $row;
-		}
-		return $array;
-	}
-	
+		
 	public function getPackages() {
 		$sql = "Select * from dbo.package";
+		$res = sqlsrv_query($this->con, $sql);
+		if ($res === false) {
+			die (print_r(sql_srv_errors(), true));
+		}
+		while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)){
+			$array[] = $row;
+		}
+		return $array;
+	}
+	
+	public function getTypes(){
+		$sql = "Select * from dbo.type";
 		$res = sqlsrv_query($this->con, $sql);
 		if ($res === false) {
 			die (print_r(sql_srv_errors(), true));

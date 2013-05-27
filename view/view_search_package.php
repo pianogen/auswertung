@@ -1,11 +1,17 @@
 <div style="border-top:1px solid #527DE5; position:absolute; top:300px; border-left:1px solid #527DE5; padding:20px 100px 20px 0px; float:left;">
 <table class="result">
+<?php if (!empty($packages)) {?>
 	<tr>
 		<td class="result"><b>Name</b></td>
 		<td class="result"><b>Typ</b></td>
 		<td class="result">&nbsp;</td>
 	</tr>
-<?php 
+<?php }
+else { ?>
+	<tr>
+		<td class="result">Es wurden kein Package mit dieser Suchanfrage gefunden</td> 
+	</tr>
+<?php }
 $i = 0;
 foreach($packages as $package) { 
 if ($i%2==0){?>

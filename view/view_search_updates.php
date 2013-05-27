@@ -1,5 +1,6 @@
 <div style="border-top:1px solid #527DE5; position:absolute; top:300px; border-left:1px solid #527DE5; padding:20px 100px 20px 0px; float:left;">
 <table class="result">
+<?php if (!empty($updates)) {?>
 	<tr>
 		<td class="result"><b>Name</b></td>
 		<td class="result"><b>KB</b></td>
@@ -9,7 +10,12 @@
 		<td class="result"><b>Approve Srv</b></td>
 		<td>&nbsp;</td>
 	</tr>
-<?php 
+<?php }
+else { ?>
+	<tr>
+		<td class="result">Es wurden kein Updates mit dieser Suchanfrage gefunden</td> 
+	</tr>
+<?php }
 $i = 0;
 foreach($updates as $update) { 
 if ($i%2==0){?>
