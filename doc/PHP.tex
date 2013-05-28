@@ -25,9 +25,13 @@
 \newpage
 \tableofcontents
 \newpage
-\section{Ausgangslage}
+\section{Einleitung}
+\subsection{Ausgangslage}
 Wir bieten unseren Kunden die Möglichkeit die Windows Updates über unserem WSUS Server herunterzuladen. Durch dieses Angebot muss sich der Kunde nicht mehr über fehlerhaften Updates kümmern, da wir die Updates zuerst in einer Testumgebung testen und diese danach freigeben. Um die Updateverwaltung einfach zu halten wurden auf dem WSUS Server Produktklassen erstellt. Computer und Server von Kunden die unser Angebot nutzen möchten, werden den entsprechenden Produktklassen zugeteilt. Updates die freigegeben sind werden wiederum den entsprechenden Produktklassen zugeteilt und somit auf den Geräten der Kunden installiert. Dieses System ist gut durchdacht, jedoch ist es sehr kompliziert diese Daten auszuwerten. \newline \newline
-Um die Daten auszuwerten werden jedes Quartal alle freigegebenen Updates manuell in einer Excel Datei aufgenommen. Jedes Update wird danach in die entsprechende Produktklasse kopiert. Auf einem weiterem Excel Blatt wird ausgewertet, welcher Benutzer welche Produktklassen benötigt. \newline \newline
-Dieser Prozess ist sehr zeitintensiv und kostet pro Quartal circa eins bis zwei Arbeitstage.
-
+Um die Daten auszuwerten werden jedes Quartal alle freigegebenen Updates manuell in einer Excel Datei aufgenommen. Jedes Update wird danach in die entsprechende Produktklasse kopiert. Auf einem weiterem Excel Blatt wird ausgewertet, welcher Benutzer welche Produktklassen benötigt. Dieser Prozess ist sehr zeitintensiv und kostet pro Quartal circa eins bis zwei Arbeitstage.
+\subsection{Ziel der Arbeit}
+Um den Aufwand zu kürzen soll der Ablauf des Prozesses so weit wie möglich automatisiert werden. Dies soll mit PHP und einem MS SQL Server realisiert werden. Im ersten Schritt soll die Verbindung zwischen den Updates und den Produktklassen programmiert werden. Als zweiter Schritt werden die Kunden hinzugefügt. Diese Arbeit befasst sich mit dem ersten Schritt des Projekts.  
+\newpage
+\section{Anforderungen}
+\subsection{Analyse der Anforderungen}
 \end{document}

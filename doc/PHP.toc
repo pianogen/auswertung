@@ -1,2 +1,4 @@
 \select@language {ngerman}
-\contentsline {section}{\numberline {1}Ausgangslage}{3}
+\contentsline {section}{\numberline {1}Einleitung}{3}
+\contentsline {subsection}{\numberline {1.1}Ausgangslage}{3}
+\contentsline {subsection}{\numberline {1.2}Ziel der Arbeit}{3}
