@@ -21,6 +21,7 @@ if ($_GET['ctrl'] === "packages"){
 		 #header { float: left; background: #527DE5; color:white; top:0px; left:200px; position:absolute; width:1200px;  height:100px; vertical-align: middle;}
 		 #body { font-family: arial; }
 		 #error { visibility:hidden; color: red; font-size: 12px; float: left; position:absolute; left: 10px; top:252px; display:inline; }
+		 #error_add { visibility: hidden; color: red; font-size: 12px; display:inline; }
 		 #separate { text-align: right; font-size: 12px; }
 		 h1 { font-family: arial; }
 		 .input { border: 1px solid #527DE5;}
@@ -53,6 +54,7 @@ if ($_GET['ctrl'] === "packages"){
 				 	document.getElementById('suchen').disabled = true;
 			 	}
 		 	}
+		 	
 		 	function titelValidate() 
 		 	{
 			 	if (document.getElementById('titel').value) {
@@ -83,6 +85,43 @@ if ($_GET['ctrl'] === "packages"){
 				 	document.getElementById('suchen').disabled = true;
 			 	}
 		 	}
+		 	function submitButton() {
+			 	var firstCheck = false;
+			 	var zahl = parseInt(document.getElementById('kb_add').value);
+			 	if (document.getElementById('name_add').value && document.getElementById('kb_add').value && document.getElementById('release_add').value) {
+				 	if (zahl == document.getElementById('kb_add').value) {
+					 	firstCheck = true;
+				 		var okayclient = false;
+					 	var l = document.getElementsByClassName('clt[]').length;
+						if (document.getElementById('approve_clt').value) {
+							for (i = 0; i < l; i++) {
+								if(document.getElementsByClassName('clt[]')[i].checked == true) {
+									okayclient = true;
+								}							
+							}
+						}
+						else {
+							okayclient = true;
+						}
+						
+						if (okay == false){
+						 	document.getElementById('error_add').style.visibility = 'visible';
+						 	document.getElementById('error_add').innerText = 'Packages und Approvement Date müssen zusammen gesetzt sein';
+						}
+				 	}
+				 	else {
+					 	document.getElementById('error_add').style.visibility = 'visible';
+					 	document.getElementById('error_add').innerText = 'Das Feld kb akzpetiert nur Zahlen';
+				 	}
+			 	}
+			 	else {
+			 		document.getElementById('error_add').style.visibility = 'visible';
+				 	document.getElementById('error_add').innerText = 'Die Felder Namen, KB und Release sind Pflichtfelder';
+			 	}
+			 	if (okay == true && firstCheck == true) {
+				 	document.insert.submit();
+			 	}
+		 	}				 	
 		 </script>
 	<head>
 	<body>

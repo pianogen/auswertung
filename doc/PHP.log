@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.30)  28 MAY 2013 22:52
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.30)  30 MAY 2013 00:21
 entering extended mode
 **PHP.tex
 (C:\inetpub\wwwroot\auswertung\doc\PHP.tex
@@ -169,23 +169,77 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--32
 
  []
 
-[3] (C:\inetpub\wwwroot\auswertung\doc\PHP.aux) ) 
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 37--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--47
+
+ []
+
+
+<C:/inetpub/wwwroot/auswertung/doc/img/Systemumfeld.jpg, id=18, 469.00218pt x 2
+46.1697pt>
+File: C:/inetpub/wwwroot/auswertung/doc/img/Systemumfeld.jpg Graphic file (type
+ jpg)
+ <use C:/inetpub/wwwroot/auswertung/doc/img/Systemumfeld.jpg>
+Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Systemumfeld.jpg
+ used on input line 52.
+(pdftex.def)             Requested size: 284.52756pt x 149.34067pt.
+
+[4 <C:/inetpub/wwwroot/auswertung/doc/img/Systemumfeld.jpg>]
+<C:/inetpub/wwwroot/auswertung/doc/img/Use_Case.jpg, id=22, 441.90094pt x 328.2
+2626pt>
+File: C:/inetpub/wwwroot/auswertung/doc/img/Use_Case.jpg Graphic file (type jpg
+)
+ <use C:/inetpub/wwwroot/auswertung/doc/img/Use_Case.jpg>
+Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Use_Case.jpg use
+d on input line 64.
+(pdftex.def)             Requested size: 412.56496pt x 306.44925pt.
+
+Overfull \hbox (67.56496pt too wide) in paragraph at lines 64--66
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--67
+
+ []
+
+[5 <C:/inetpub/wwwroot/auswertung/doc/img/Use_Case.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 68--74
+
+ []
+
+[6] (C:\inetpub\wwwroot\auswertung\doc\PHP.aux) ) 
 Here is how much of TeX's memory you used:
- 1913 strings out of 494045
- 25716 string characters out of 3148383
- 80862 words of memory out of 3000000
- 5203 multiletter control sequences out of 15000+200000
+ 1926 strings out of 494045
+ 26275 string characters out of 3148383
+ 81882 words of memory out of 3000000
+ 5213 multiletter control sequences out of 15000+200000
  8152 words of font info for 29 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,6n,24p,750b,215s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,6n,24p,1045b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmbx10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12
 .pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmr12.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmr17.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on PHP.pdf (3 pages, 87064 bytes).
+Output written on PHP.pdf (6 pages, 142132 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
+ 48 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
