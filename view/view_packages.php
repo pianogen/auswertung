@@ -5,11 +5,11 @@ else {
 $url = "index.php?ctrl=packages&action=$button";
 } ?>
 <form action="<?php echo $url ?>" method="POST">
-<div style="padding: 0px 0px 20px 0px; float:left;">
+<div id="main">
 <table>
 	<tr>
 		<td>Name</td>
-		<td><input type="text" value="<?php echo $packages['name']; ?>" name="name"></td>
+		<td><input type="text" value="<?php echo $packages['name']; ?>" name="name" id="package_search" onblur="packageValidate();"></td>
 	</tr>
 	<tr>
 		<td>Typ</td>
@@ -27,7 +27,7 @@ $url = "index.php?ctrl=packages&action=$button";
 	</tr>
 	<tr>
 		<th colspan="2" align="right">
-			<input type="submit" value="<?php echo $button?>">
+			<input type="submit" value="<?php echo $button?>" id="search_pkg" <?php if ($button !== "Update") { echo "DISABLED"; }?>>
 			<?php if ($button === "Update"){ ?>
 				<input type="button" onclick="window.location.href = 'index.php?ctrl=packages&action=delete&id=<?php echo $packages['id']?>';" value="Löschen"></td>
 	<?php 	}
@@ -39,7 +39,7 @@ $url = "index.php?ctrl=packages&action=$button";
 	</tr>
 </table>
 <?php if (!empty($updates)) {?>
-<div style="border-top:1px solid #527DE5; border-left:1px solid #527DE5; padding:20px 100px 20px 0px; float:left;">
+<div id="divresult">
 <table class="result">
 <tr>
 		<td class="result"><b>Name</b></td>
@@ -66,10 +66,10 @@ foreach ($updates as $update) {
 	<td class="result"><?php echo $update[6]; ?></td>
 	<td class="result">
 <?php if ($i%2==0) {?>
-		<a href="index.php?ctrl=updates&action=select&id=<?php echo $update[0]?>" style="color:#527DE5;">mehr Info</a>
+		<a href="index.php?ctrl=updates&action=select&id=<?php echo $update[0]?>" style="color:#527DE5; text-decoration:underline">mehr Info</a>
 		<?php  }
 else { ?>
-<a href="index.php?ctrl=updates&action=select&id=<?php echo $update[0]?>" style="color:white;">mehr Info</a>
+<a href="index.php?ctrl=updates&action=select&id=<?php echo $update[0]?>" style="color:white; text-decoration:underline">mehr Info</a>
 <?php  } ?>
 </td>
 </tr>

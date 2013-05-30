@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.30)  30 MAY 2013 00:21
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.30)  30 MAY 2013 18:09
 entering extended mode
 **PHP.tex
 (C:\inetpub\wwwroot\auswertung\doc\PHP.tex
@@ -223,23 +223,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--74
 
  []
 
-[6] (C:\inetpub\wwwroot\auswertung\doc\PHP.aux) ) 
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 76.
+[6] [7] (C:\inetpub\wwwroot\auswertung\doc\PHP.aux) ) 
 Here is how much of TeX's memory you used:
- 1926 strings out of 494045
- 26275 string characters out of 3148383
- 81882 words of memory out of 3000000
- 5213 multiletter control sequences out of 15000+200000
+ 1933 strings out of 494045
+ 26368 string characters out of 3148383
+ 82882 words of memory out of 3000000
+ 5220 multiletter control sequences out of 15000+200000
  8152 words of font info for 29 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  27i,6n,24p,1045b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmbx10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12
-.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr17.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on PHP.pdf (6 pages, 142132 bytes).
+<C:/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmbx10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr17.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on PHP.pdf (7 pages, 145529 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
+ 53 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

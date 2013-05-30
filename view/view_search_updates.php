@@ -1,4 +1,4 @@
-<div style="border-top:1px solid #527DE5; position:absolute; top:300px; border-left:1px solid #527DE5; padding:20px 100px 20px 0px; float:left;">
+<div id="divresult" style="position:absolute; top:300px;">
 <table class="result">
 <?php if (!empty($updates)) {?>
 	<tr>
@@ -32,10 +32,10 @@ if ($i%2==0){?>
 	<td class="result"><?php echo $update[6]; ?></td>
 	<td class="result">
 <?php if ($i%2==0) {?>
-		<a href="index.php?ctrl=updates&action=select&id=<?php echo $update[0]?>" style="color:#527DE5;">mehr Info</a>
+		<a href="index.php?ctrl=updates&action=select&id=<?php echo $update[0]?>" style="color:#527DE5; text-decoration:underline;">mehr Info</a>
 		<?php  }
 else { ?>
-<a href="index.php?ctrl=updates&action=select&id=<?php echo $update[0]?>" style="color:white;">mehr Info</a>
+<a href="index.php?ctrl=updates&action=select&id=<?php echo $update[0]?>" style="color:white; text-decoration:underline;">mehr Info</a>
 <?php  }?>
 	</td>
 </tr>

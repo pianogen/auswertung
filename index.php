@@ -23,11 +23,16 @@ if ($_GET['ctrl'] === "packages"){
 		 #error { visibility:hidden; color: red; font-size: 12px; float: left; position:absolute; left: 10px; top:252px; display:inline; }
 		 #error_add { visibility: hidden; color: red; font-size: 12px; display:inline; }
 		 #separate { text-align: right; font-size: 12px; }
+		 #main { padding: 0px 0px 20px 0px; float:left; }
+		 #divresult { border-top:1px solid #527DE5; border-left:1px solid #527DE5; padding:20px 100px 20px 0px; float:left; }
 		 h1 { font-family: arial; }
 		 .input { border: 1px solid #527DE5;}
+		 .colspan { text-align: left; }
+		 
 		 table.result {border-collapse:collapse; padding:10px; } 
 		 td.result { padding: 10px; }
 		 .button { display: block; width: 115px; height: 25px; background: #4E9CAF; padding: 10px; text-align: center; border-radius: 5px; color: white; font-weight: bold;}
+		 a { color:white; text-decoration:none; padding: 20px 0px 0px 10px; }
 		 -->
 		 </style>
 		 <script type="text/javascript">
@@ -85,6 +90,14 @@ if ($_GET['ctrl'] === "packages"){
 				 	document.getElementById('suchen').disabled = true;
 			 	}
 		 	}
+		 	function packageValidate() {
+			 	if (document.getElementById('package_search').value) {
+				 	document.getElementById('search_pkg').disabled = false;
+			 	}
+			 	else {
+			 		document.getElementById('search_pkg').disabled = true;
+			 	}
+		 	}
 		 	function submitButton() {
 			 	var firstCheck = false;
 			 	var zahl = parseInt(document.getElementById('kb_add').value);
@@ -103,8 +116,19 @@ if ($_GET['ctrl'] === "packages"){
 						else {
 							okayclient = true;
 						}
-						
-						if (okay == false){
+						var okaysrv = false;
+						var l_srv = document.getElementsByClassName('srv[]').length;
+						if (document.getElementById('approve_srv').value) {
+								for (i = 0; i < l_srv; i++) {
+										if(document.getElementsByClassName('srv[]')[i].checked == true) {
+											okaysrv = true;
+										}
+								}
+						}
+						else {
+							okaysrv = true;
+						}
+						if (okayclient == false || okaysrv == false){
 						 	document.getElementById('error_add').style.visibility = 'visible';
 						 	document.getElementById('error_add').innerText = 'Packages und Approvement Date müssen zusammen gesetzt sein';
 						}
@@ -118,7 +142,7 @@ if ($_GET['ctrl'] === "packages"){
 			 		document.getElementById('error_add').style.visibility = 'visible';
 				 	document.getElementById('error_add').innerText = 'Die Felder Namen, KB und Release sind Pflichtfelder';
 			 	}
-			 	if (okay == true && firstCheck == true) {
+			 	if (okayclient == true && firstCheck == true && okaysrv == true) {
 				 	document.insert.submit();
 			 	}
 		 	}				 	
@@ -128,13 +152,13 @@ if ($_GET['ctrl'] === "packages"){
 	<div>
 		<div id="nav">
 			<div style="padding: 100px 0px 0px 10px;">
-				<a href="index.php?ctrl=search" style="color:white; text-decoration:none; padding: 20px 0px 0px 10px;">Suchen</a>
+				<a href="index.php?ctrl=search">Suchen</a>
 			</div>
 			<div style="padding: 20px 0px 0px 10px;">
-				<a href="index.php?ctrl=updates" style="color:white; text-decoration:none; padding: 20px 0px 0px 10px;">Update hinzufügen</a>
+				<a href="index.php?ctrl=updates">Update hinzufügen</a>
 			</div>
 			<div style="padding: 20px 0px 0px 10px;">
-				<a href="index.php?ctrl=packages" style="color:white; text-decoration:none; padding: 20px 0px 0px 10px;">Package hinzufügen</a>
+				<a href="index.php?ctrl=packages">Package hinzufügen</a>
 			</div>
 		</div>
 		<div id="header">

@@ -72,6 +72,32 @@ Der Hauptnutzer ist zugleich der Auftraggeber dieses Projekts. Neben dem Auftrag
 \textbf{Annahmen} \newline
 Der zweite Teil des Projekts wird wie oben bereits erwähnt erst später entwickelt. In dieser Dokumentation wird auf den zweiten Teil des Projekts bewusst nicht eingegangen, da dies ansonsten den Umfang dieses Dokuments sprengen würde.
 \subsection{Anforderungen}
+\begin{itemize}
+\item Die Applikation muss dem Benutzer ermöglichen, neue Updateeinträge durch eine Maske in die Datenbank einzutragen. 
+\item Die Applikation muss dem Benutzer ermöglichen, über eine Maske nach Updateeinträge auf der Datenbank zu suchen. 
+\item Die Applikation muss dem Benutzer ermöglichen, über eine Maske Updateeinträge auf der Datenbank zu verändern und zu löschen. 
+\item Die Applikation muss dem Benutzer ermöglichen, neue Packageeinträge durch eine Maske in die Datenbank einzutragen. 
+\item Die Applikation muss dem Benutzer ermöglichen, über eine Maske nach Packageeinträge auf der Datenbank zu suchen. 
+\item Die Applikation muss dem Benutzer ermöglichen, über eine Maske Packageeinträge auf der Datenbank zu verändern und zu löschen. 
+\item Die Applikation muss dem Benutzer alle Packagezuweisungen eines Updateeintrag aufzeigen, wenn der Benutzer den Updateeintrag anschaut. 
+\item Die Applikation muss dem Benutzer ermöglichen, über eine Maske ein Packageeintrag, dem entsprechendem Typ zuzuordnen. 
+\item Andersum soll die Applikation dem Benutzer alle Updateeinträge eines Packages aufzeigen, wenn der Benutzer den Packageeintrag anschaut. 
+\item Sobald der Benutzer einen neuen Updateeintrag eröffnen will, soll die Applikation ihm die Packages aufzeigen, damit er sogleich die Verknüpfung erstellen kann.
+\end{itemize}
+\newpage
+Beim Speichervorgang des neuen Eintrag soll das System folgende Einträge die durch den Benutzer erfolgt sind überprüfen:
+\begin{itemize}
+\item Der Titel eines Updateeintrag darf nicht leer sein.
+\item Die KB Nummer eines Updateeintrags darf nicht leer sein und muss einen numerischen Wert haben.
+\item Das Veröffentlichungsdatum eines Updateeintrags darf nicht leer sein.
+\item Ein Updateeintrag kann mehreren Packages zugeteilt werden.
+\item Ein Updateeintrag kann keinem Package zugeteilt werden.
+\item Ein Update kann von Microsoft auch zurückgezogen werden, dies sollte ebenfalls im Datensatz aufgenommen werden können. Dieser kann auch leer sein.
+\item Sobald der ein Update mindestens einem Package zugeteilt worden ist, muss der Benutzer auch ein Approvement Daten setzen. 
+\item Falls das Update keinem Package zugeteilt worden ist, darf kein Approvement Datum gesetzt sein.
+\item Der Titel eines Packageeintrag darf nicht leer sein.
+\item Der Typ eines Packageeintrag darf nicht leer sein.
+\end{itemize}
 
 \subsection{Analyse der Anforderungen}
 \end{document}
