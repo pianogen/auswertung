@@ -95,7 +95,7 @@ class mdl_updates {
 			return $res;
 	}
 	
-	public function emptyDates(){
+	private function emptyDates(){
 		if ($_POST['decline'] === ""){
 			$_POST['decline'] = NULL;
 		}

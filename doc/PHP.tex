@@ -6,6 +6,7 @@
 \usepackage{multirow}
 \usepackage{threeparttable}
 \usepackage{lscape}
+\usepackage{amsmath}
 
 \begin{document}
 
@@ -91,6 +92,7 @@ Beim Speichervorgang des neuen Eintrag soll das System folgende Einträge die dur
 \item Die KB Nummer eines Updateeintrags darf nicht leer sein und muss einen numerischen Wert haben.
 \item Das Veröffentlichungsdatum eines Updateeintrags darf nicht leer sein.
 \item Ein Updateeintrag kann mehreren Packages zugeteilt werden.
+\item Datumsfelder werden nur als dd.mm.JJJJ angenommen
 \item Ein Updateeintrag kann keinem Package zugeteilt werden.
 \item Ein Update kann von Microsoft auch zurückgezogen werden, dies sollte ebenfalls im Datensatz aufgenommen werden können. Dieser kann auch leer sein.
 \item Sobald der ein Update mindestens einem Package zugeteilt worden ist, muss der Benutzer auch ein Approvement Daten setzen. 
@@ -98,6 +100,72 @@ Beim Speichervorgang des neuen Eintrag soll das System folgende Einträge die dur
 \item Der Titel eines Packageeintrag darf nicht leer sein.
 \item Der Typ eines Packageeintrag darf nicht leer sein.
 \end{itemize}
-
+Falls eine dieser Überprüfungen fehlschlägt, darf der Eintrag nicht gespeichert werden. Die Anforderungen des Speicher- und Änderungsvorgangs sind identisch. Das Löschen eines Updateeintrag muss die Verknüpfung zu den zugeteilten Packages ebenfalls löschen. Das Löschen eines Packageeintrag muss wiederum die Verknüpfungen zu den implementierten Updates löschen.
 \subsection{Analyse der Anforderungen}
+\newpage
+\section{Entwicklung}
+\subsection{Einleitung}
+Dieses Kapitel des Dokuments handelt um die Planung und Entwicklung des Programms.  
+\subsection{Datenbank}
+Um die aufgenommenen Updates zu speichern, wird eine Datenbank benötigt. Vor der Erstellung der Datenbank wurde ein Entity Relationship Diagram erstellt. Auf der nächsten Seite befindet sich ein genaue Beschreibung der Tabellen und Attributen. Der Text in Klammern beschreibt die Eigenschaften der Attributen.
+\begin{figure}[htbp]
+		\centering
+	\includegraphics[width=14.5cm]{C:/inetpub/wwwroot/auswertung/doc/img/Datenbank.jpg}
+		\label{fig:Datenbank}
+\end{figure}
+\newpage
+\subsubsection{Tabelle update}
+In dieser Tabelle befinden sich alle Informationen, die ein Update benötigt.
+\begin{itemize}
+\item \textbf{id} (Primärschlüssel, int, auto increment, NOT NULL) \newline 
+Wird für die Verbindung zur Tabelle update\_package benötigt. 
+\item \textbf{name} (varchar(400), NOT NULL) \newline 
+Das ist der Titel des Updates, da der Titel recht lange sein kann, wird der String auf 400 Zeichen begrenzt. Diese Attribut ist ein Pflichtfeld.
+\item \textbf{kb} (int, NOT NULL) \newline
+Das ist die KB Nummer\footnote{Knowlegde Base Number: Wird für Microsoft genutzt, um Updates eindeutig zu kennzeichnen} des Updates. Dieses Attribut wurde nicht als Primary Key benutzt, da es schon vorgekommen ist, das zwei Updates die selbe KB Nummer haben. Dieses Attribut ist ein Pflichtfeld, da jedes Update eine KB Nummer hat.
+\item \textbf{release} (date, NOT NULL) \newline
+Dieses Attribut beinhaltet das Erscheinungsdatum des Updates. Es ist ein Pflichtfeld, da jedes Update dass eingetragen wird, schon erschienen ist.
+\item \textbf{decline} (date) \newline
+Falls ein Update von Microsoft wegen einem Bug zurückgenommen wird, wird dieses Datum in diesem Feld eingefügt.
+\item \textbf{approve\_clt} (date)  \newline 
+Dieses Attribut beinhaltet das Datum, an dem das Update für die Clients freigegeben wurde. Dieses Feld darf leer sein, da nicht jedes Update zwingend für Clients ist.
+\item \textbf{approve\_srv} (date) \newline
+Dieses Attribut beinhaltet das Datum, an dem das Update für die Server freigegeben wurde. Dieses Feld darf leer sein, da nicht jedes Update zwingend für Server ist.
+\end{itemize}
+\subsubsection{Tabelle update\_package}
+Diese Tabelle ist eine Zwischentabelle. Durch diese Tabelle wird die Beziehung zwischen den Tabellen update und package ermöglicht. In dieser Tabelle besteht der Primärschlüssel aus zwei Attributen.
+\begin{itemize}
+\item \textbf{updateId} (Primary Key, int, NOT NULL) \newline 
+Dieses Attribut enthält von jedem Update, welches mit einem Package verknüpft wurde, den entsprechenden Fremdschlüssel.
+\item \textbf{packageId} (Primary Key, int, NOT NULL) \newline
+Dieses Attribut enthält von jedem Package, welches mit einem Update verknüpft wurde, den entsprechenden Fremdschlüssel.
+\end{itemize}
+\subsubsection{Tabelle package}
+Diese Tabelle beinhaltet alle Informationen die ein Package benötigt.
+\begin{itemize}
+\item \textbf{id} (Primary Key, Auto Increment, int, NOT NULL) \newline
+Wird für die Beziehung zur Tabelle update benötigt.
+\item \textbf{name} (varchar(50), NOT NULL) \newline
+Das ist der Titel des Package, die Stringgrösse von diesem Attribut wurde auf 50 Zeichen gesetzt.
+\item \textbf{typeId} (int, NOT NULL) \newline
+Dies ist der Fremdschlüssel der Tabelle type, er wird für die Beziehung zwischen den Tabellen package und type benutzt.
+\end{itemize}
+\subsubsection{Tabelle type}
+Diese Tabelle beinhaltet alle Typen der Packages. Sie wird benötigt um Redundanz und somit Dateninkonsistenz zu vermeiden. \newline
+\begin{itemize}
+\item \textbf{id} (Primary Key, int, Auto Increment, NOT NULL) \newline
+Wird für die Beziehung zwischen den Tabellen type und package benötigt. 
+\item \textbf{type} (varchar(10), NOT NULL) \newline 
+Dieses Attribut beinhaltet den Namen des Typs. Die Stringgrösse wird auf 10 gesetzt, da die momentan benötigten Typen relativ kurz sind
+\end{itemize}
+\subsection{Sofwarearchitektur}
+Das Programm wird mit der Sprache PHP entwickelt. Das ganze Programm wird nach dem MVC Konzept konzipiert. Das Programm muss folgende Funktionen anbieten.
+\begin{itemize}
+\item Suchen von Updates und Packages
+\item Erstellen, ändern und löschen von Updates
+\item Erstellen, ändern und löschen von Packages
+\item Anzeigen der Packages und den beinhalteten Updates
+\end{itemize}
+Durch diese gewünschten Funktionen entsteht folgendes Klassendiagramm.
+
 \end{document}
