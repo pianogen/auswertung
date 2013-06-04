@@ -1,6 +1,6 @@
 <?php 
 class mdl_updates {
-	public $con;
+	private $con;
 	
 	public function __construct(){
 		$serverName = "(local)";

@@ -1,8 +1,8 @@
 <?php 
 
 class updates {
-	public $update;
-	public $resolver;
+	private $update;
+	private $resolver;
 	
 	public function __construct( mdl_updates $mdl, resolver $resolver){
 		$this->update = $mdl;
@@ -25,10 +25,12 @@ class updates {
 	
 	public function Speichern() {
 		$res = $this->update->save();
+		$this->select();
 	}
 	
 	public function update() {
 		$res = $this->update->update();
+		$this->select();
 	}
 	
 	public function delete() {

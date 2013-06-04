@@ -1,7 +1,7 @@
 <?php 
 class search {
-	public $search;
-	public $resolver;
+	private $search;
+	private $resolver;
 	
 	public function __construct( mdl_search $mdl, resolver $resolver){
 		$this->search = $mdl;

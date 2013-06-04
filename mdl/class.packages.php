@@ -3,7 +3,7 @@
  * Diese PHP Klasse wird benutzt, um die Packages aus der Datenbank auszulesen, mutieren und löschen
  */
 class mdl_packages {
-	public $con;
+	private $con;
 	/* --------------------------------------------------------------------------------------------------
 	 * public function __construct()
 	 * Dies ist der Konstruktor dieser Seite, er öffnet die Verbindung zur Datenbank, sobald ein Objekt der Klasse mdl_packages instanziert wurde

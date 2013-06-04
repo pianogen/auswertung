@@ -4,9 +4,9 @@
  */
 class resolver {
 	
-	public $get;
+	private $get;
 	
-	public $post;
+	private $post;
 	
 	public function __construct( $ctrl = false, $action = false ) {
 		//set the request parameters

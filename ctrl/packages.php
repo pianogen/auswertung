@@ -1,7 +1,7 @@
 <?php 
 class packages {
-	public $package;
-	public $resovler;
+	private $package;
+	private $resovler;
 	
 	public function __construct(mdl_packages $mdl, resolver $resolver){
 		$this->package = $mdl;
@@ -24,14 +24,17 @@ class packages {
 	
 	public function speichern() {
 		$res = $this->package->save();
+		header("Location: index.php?ctrl=packages");
 	}
 	
 	public function update() {
 		$res = $this->package->update();
+		header("Location: index.php?ctrl=packages");
 	}
 	
 	public function delete() {
 		$delete = $this->package->delete();
+		header("Location: index.php?ctrl=search");
 	}
 }
 

@@ -7,6 +7,7 @@
 \usepackage{threeparttable}
 \usepackage{lscape}
 \usepackage{amsmath}
+\usepackage{pdfpages}
 
 \begin{document}
 
@@ -167,5 +168,48 @@ Das Programm wird mit der Sprache PHP entwickelt. Das ganze Programm wird nach d
 \item Anzeigen der Packages und den beinhalteten Updates
 \end{itemize}
 Durch diese gewünschten Funktionen entsteht folgendes Klassendiagramm.
-
+\includepdf[pages={1}]{C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf}
+\subsubsection{Model}
+Das Model ist für die SQL Abfragen zuständig. Jede Klasse hat einen Konstruktor und einen Dekonstruktor. Der Konstruktor baut jeweils die Verbindung zur SQL Datenbank auf und der Dekonstruktor baut sie wieder ab.  \newline \newline
+Die anderen Methoden sind jeweils zuständig um die Einträge zu speichern, ändern und zu löschen, sowie benutzerspezifische Suchabfragen durchzuführen und dementsprechend die gefundenen Datensätze zurückzugeben. 
+\subsubsection{Controller}
+Der Controller ist für die Logik des Programm zuständig, der Controller arbeitet mit den POST und GET Werte und weiss dadurch welche Funktion im Model aufgerufen werden muss. Nach der Abfrage der Datenbank durch das Model, hat der Controller Zugriff auf die gewünschten Daten, nun wird anhand der GET und POST Werte entschieden, welche Datei des Packages View aufgerufen werden soll.\newline \newline
+Die Verbindung der Controllerklassen mit den Modelklassen wird einfach implementiert sein. Eine Controllerklasse hat nur Zugriff auf die entsprechende Modelklasse, dies bedeutet das die Controllerklasse \textit{packages} hat nur Zugriff auf die Modelklasse \textit{class.packages}. \newline \newline 
+Die einzige Klasse, die diese Regel nicht befolgt ist die Klasse \textit{class.resolver}.
+\subsubsection{class.resolver}
+Die Klasse class.resolver hat die wichtigste Funktion in der Logik. Sie überprüft, welche Werte sich im POST und GET befinden, und führt somit die entsprechende Funktion in den entsprechenden Klassen aus.
+\subsubsection{View}
+In der View befinden sich alle Dateien, die für das Visualisieren der Daten zuständig sind. Sie werden im Controller implementiert und stellen die entsprechenden abgefragten Daten grafisch dar.
+\newpage
+\subsubsection{index}
+In dieser Datei befindet sich das visuelle Grundgerüst der Web Applikation und ein paar JavaScript Funktionen. Die JavaScript Funktionen sind für die Validierung der Benutzereingabe zuständig. Durch die Implementation der JavaScript Funktionen werden die Eingabefelder vor dem Absenden validiert. Folgende Eingaben werden von JavaScript überprüft.
+\begin{itemize}
+\item \textbf{Suchfelder} \newline
+Es darf nur ein Suchfeld, sobald der Benutzer ein Suchfeld ausgefüllt hat, werden die anderen Felder gräulich hinterlegt und der Benutzer kann die Suche ausführen.
+Das Suchfeld kb darf nur Zahlen beinhalten, falls im Suchfeld andere Zeichen vorhanden sind, wird der Suchknopf deaktiviert und eine Fehlermeldung erscheint.
+Das Erscheinungsdatum darf nur ein Datum haben im Format dd.mm.YYYY haben, ansonsten wird der Suchknopf deaktiviert und eine Fehlermeldung erscheint.
+\item \textbf{Update Management}
+Der Knopf um das Update zu speichern wird erst aktiviert, wenn in den Feldern Name, KB und Erscheinungsdatum gültige Werte vorhanden sind.
+Sobald ein Package für das Update ausgewählt wird, wird der Suchknopf deaktiviert solange der Benutzer das Package wieder abwählt oder ein gültiges Freigabedatum für den Typ dieses Packages eingibt. Diese Validierung gilt für das Eröffnen oder Ändern eines Eintrags.
+\item \textbf{Package Management} 
+Der Knopf um das Package zu speichern wird erst aktiviert, wenn in dem Feld Name ein gültiger Wert eingegeben wurde. Diese Validierung gilt für das Eröffnen oder 
+Ändern eines Eintrags.
+\end{itemize}
+\newpage
+\section{Entwurf}
+\begin{figure}[htbp]
+		\centering
+	\includegraphics[width= 15cm]{C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg}
+		\label{fig:Entwurf Suchen}
+\end{figure}
+\begin{figure}[htbp]
+		\centering
+	\includegraphics[width= 15cm]{C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg}
+		\label{fig:Entwurf Package}
+\end{figure}
+\begin{figure}[htbp]
+		\centering
+	\includegraphics[width= 15cm]{C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.jpg}
+		\label{fig:Entwurf Update}
+\end{figure}
 \end{document}
