@@ -167,7 +167,7 @@ Das Programm wird mit der Sprache PHP entwickelt. Das ganze Programm wird nach d
 \item Erstellen, ändern und löschen von Packages
 \item Anzeigen der Packages und den beinhalteten Updates
 \end{itemize}
-Durch diese gewünschten Funktionen entsteht folgendes Klassendiagramm.
+Durch diese gewünschten Funktionen entsteht folgendes Architektur.
 \includepdf[pages={1}]{C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf}
 \subsubsection{Model}
 Das Model ist für die SQL Abfragen zuständig. Jede Klasse hat einen Konstruktor und einen Dekonstruktor. Der Konstruktor baut jeweils die Verbindung zur SQL Datenbank auf und der Dekonstruktor baut sie wieder ab.  \newline \newline
@@ -181,7 +181,7 @@ Die Klasse class.resolver hat die wichtigste Funktion in der Logik. Sie überprüf
 \subsubsection{View}
 In der View befinden sich alle Dateien, die für das Visualisieren der Daten zuständig sind. Sie werden im Controller implementiert und stellen die entsprechenden abgefragten Daten grafisch dar.
 \newpage
-\subsubsection{index}
+\subsubsection{index.php und JavaScript}
 In dieser Datei befindet sich das visuelle Grundgerüst der Web Applikation und ein paar JavaScript Funktionen. Die JavaScript Funktionen sind für die Validierung der Benutzereingabe zuständig. Durch die Implementation der JavaScript Funktionen werden die Eingabefelder vor dem Absenden validiert. Folgende Eingaben werden von JavaScript überprüft.
 \begin{itemize}
 \item \textbf{Suchfelder} \newline
@@ -197,19 +197,22 @@ Der Knopf um das Package zu speichern wird erst aktiviert, wenn in dem Feld Name
 \end{itemize}
 \newpage
 \section{Entwurf}
+Die Webseite besteht aus drei verschiedenen Ansichten. Eine für die Suche, eine um Updates zu mutieren und eine um Packages zu mutieren.
 \begin{figure}[htbp]
 		\centering
-	\includegraphics[width= 15cm]{C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg}
+	\includegraphics[width= 10cm]{C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg}
 		\label{fig:Entwurf Suchen}
 \end{figure}
 \begin{figure}[htbp]
 		\centering
-	\includegraphics[width= 15cm]{C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg}
-		\label{fig:Entwurf Package}
+	\includegraphics[width= 10cm]{C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.jpg}
+		\label{fig:Entwurf Update}
 \end{figure}
 \begin{figure}[htbp]
 		\centering
-	\includegraphics[width= 15cm]{C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.jpg}
-		\label{fig:Entwurf Update}
+	\includegraphics[width= 10cm]{C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg}
+		\label{fig:Entwurf Package}
 \end{figure}
+\newpage
+\section{Testkonzept}
 \end{document}

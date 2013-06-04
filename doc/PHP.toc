@@ -19,5 +19,6 @@
 \contentsline {subsubsection}{\numberline {3.3.2}Controller}{12}
 \contentsline {subsubsection}{\numberline {3.3.3}class.resolver}{12}
 \contentsline {subsubsection}{\numberline {3.3.4}View}{12}
-\contentsline {subsubsection}{\numberline {3.3.5}index}{13}
+\contentsline {subsubsection}{\numberline {3.3.5}index.php und JavaScript}{13}
 \contentsline {section}{\numberline {4}Entwurf}{14}
+\contentsline {section}{\numberline {5}Testkonzept}{14}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.30)  4 JUN 2013 21:16
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.30)  4 JUN 2013 23:30
 entering extended mode
 **PHP.tex
 (C:\inetpub\wwwroot\auswertung\doc\PHP.tex
@@ -401,51 +401,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 176--179
  []
 
 [12] [13]
-<C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg, id=65, 528.47438pt x
- 282.30469pt>
+<C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg, id=65, 484.05844pt x
+ 197.23688pt>
 File: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg Graphic file (ty
 pe jpg)
  <use C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.j
-pg used on input line 202.
-(pdftex.def)             Requested size: 426.79134pt x 227.98492pt.
+pg used on input line 203.
+(pdftex.def)             Requested size: 284.52756pt x 115.93835pt.
 
-Overfull \hbox (81.79134pt too wide) in paragraph at lines 202--204
- [][] 
- []
-
-
-<C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg, id=66, 448.67625pt 
-x 261.97874pt>
-File: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg Graphic file (t
-ype jpg)
- <use C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg>
-Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.
-jpg used on input line 207.
-(pdftex.def)             Requested size: 426.79134pt x 249.21017pt.
-
-Overfull \hbox (81.79134pt too wide) in paragraph at lines 207--209
- [][] 
- []
-
-
-<C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.jpg, id=67, 444.15938pt x
- 294.34969pt>
+<C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.jpg, id=66, 403.5075pt x 
+195.73125pt>
 File: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.jpg Graphic file (ty
 pe jpg)
  <use C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.jpg>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.j
-pg used on input line 212.
-(pdftex.def)             Requested size: 426.79134pt x 282.83746pt.
+pg used on input line 208.
+(pdftex.def)             Requested size: 284.52756pt x 138.01741pt.
 
-Overfull \hbox (81.79134pt too wide) in paragraph at lines 212--214
- [][] 
- []
+<C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg, id=67, 385.44pt x 1
+53.57375pt>
+File: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg Graphic file (t
+ype jpg)
+ <use C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg>
+Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.
+jpg used on input line 213.
+(pdftex.def)             Requested size: 284.52756pt x 113.36627pt.
 
-[14 <C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg>] [15 <C:/inetpub
-/wwwroot/auswertung/doc/img/entwurf-package.jpg>] [16 <C:/inetpub/wwwroot/auswe
-rtung/doc/img/entwurf-update.jpg>] (C:\inetpub\wwwroot\auswertung\doc\PHP.aux) 
-) 
+[14 <C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg> <C:/inetpub/wwwr
+oot/auswertung/doc/img/entwurf-update.jpg> <C:/inetpub/wwwroot/auswertung/doc/i
+mg/entwurf-package.jpg>] (C:\inetpub\wwwroot\auswertung\doc\PHP.aux) ) 
 Here is how much of TeX's memory you used:
  3808 strings out of 494045
  51703 string characters out of 3148383
@@ -454,17 +439,17 @@ Here is how much of TeX's memory you used:
  9626 words of font info for 35 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  38i,18n,42p,1045b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmbx12.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr6.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
-:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-ti10.pfb>
-Output written on PHP.pdf (16 pages, 458369 bytes).
+<C:/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.p
+fb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr17.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr6.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on PHP.pdf (14 pages, 447311 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
+ 103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
