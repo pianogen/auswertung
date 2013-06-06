@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.30)  4 JUN 2013 23:30
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.30)  6 JUN 2013 23:25
 entering extended mode
 **PHP.tex
 (C:\inetpub\wwwroot\auswertung\doc\PHP.tex
@@ -272,22 +272,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--34
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 39--49
+Underfull \hbox (badness 10000) in paragraph at lines 43--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--49
+Underfull \hbox (badness 10000) in paragraph at lines 43--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--49
+Underfull \hbox (badness 10000) in paragraph at lines 43--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--49
+Underfull \hbox (badness 10000) in paragraph at lines 43--53
 
  []
 
@@ -298,7 +298,7 @@ File: C:/inetpub/wwwroot/auswertung/doc/img/Systemumfeld.jpg Graphic file (type
  jpg)
  <use C:/inetpub/wwwroot/auswertung/doc/img/Systemumfeld.jpg>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Systemumfeld.jpg
- used on input line 54.
+ used on input line 58.
 (pdftex.def)             Requested size: 284.52756pt x 149.34067pt.
 
 [4 <C:/inetpub/wwwroot/auswertung/doc/img/Systemumfeld.jpg>]
@@ -308,25 +308,25 @@ File: C:/inetpub/wwwroot/auswertung/doc/img/Use_Case.jpg Graphic file (type jpg
 )
  <use C:/inetpub/wwwroot/auswertung/doc/img/Use_Case.jpg>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Use_Case.jpg use
-d on input line 66.
+d on input line 70.
 (pdftex.def)             Requested size: 412.56496pt x 306.44925pt.
 
-Overfull \hbox (67.56496pt too wide) in paragraph at lines 66--68
+Overfull \hbox (67.56496pt too wide) in paragraph at lines 70--72
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--69
+Underfull \hbox (badness 10000) in paragraph at lines 62--73
 
  []
 
 [5 <C:/inetpub/wwwroot/auswertung/doc/img/Use_Case.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 70--76
+Underfull \hbox (badness 10000) in paragraph at lines 74--80
 
  []
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 82.
 [6] [7]
 <C:/inetpub/wwwroot/auswertung/doc/img/Datenbank.jpg, id=33, 402.75468pt x 322.
 95656pt>
@@ -334,122 +334,168 @@ File: C:/inetpub/wwwroot/auswertung/doc/img/Datenbank.jpg Graphic file (type jp
 g)
  <use C:/inetpub/wwwroot/auswertung/doc/img/Datenbank.jpg>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Datenbank.jpg us
-ed on input line 114.
+ed on input line 116.
 (pdftex.def)             Requested size: 412.56496pt x 330.82564pt.
 
-Overfull \hbox (67.56496pt too wide) in paragraph at lines 114--116
+Overfull \hbox (67.56496pt too wide) in paragraph at lines 116--118
  [][] 
  []
 
 [8 <C:/inetpub/wwwroot/auswertung/doc/img/Datenbank.jpg>] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 155--157
+Underfull \hbox (badness 10000) in paragraph at lines 157--159
 
  []
 
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 165.
 [10]
-<C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf, id=48, page=1, 597.
+<C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf, id=49, page=1, 597.
 23125pt x 845.1575pt>
 File: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf Graphic file (t
 ype pdf)
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.
-pdf, page1 used on input line 171.
+pdf, page1 used on input line 173.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf Graphic file (t
 ype pdf)
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.
-pdf, page1 used on input line 171.
+pdf, page1 used on input line 173.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf Graphic file (t
 ype pdf)
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.
-pdf, page1 used on input line 171.
+pdf, page1 used on input line 173.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf Graphic file (t
 ype pdf)
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.
-pdf, page1 used on input line 171.
+pdf, page1 used on input line 173.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf Graphic file (t
 ype pdf)
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.
-pdf, page1 used on input line 171.
+pdf, page1 used on input line 173.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 
 [11 <C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
+Underfull \hbox (badness 10000) in paragraph at lines 175--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--179
+Underfull \hbox (badness 10000) in paragraph at lines 178--181
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--179
+Underfull \hbox (badness 10000) in paragraph at lines 178--181
 
  []
 
 [12] [13]
-<C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg, id=65, 484.05844pt x
+<C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg, id=66, 484.05844pt x
  197.23688pt>
 File: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg Graphic file (ty
 pe jpg)
  <use C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.j
-pg used on input line 203.
+pg used on input line 205.
 (pdftex.def)             Requested size: 284.52756pt x 115.93835pt.
 
-<C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.jpg, id=66, 403.5075pt x 
+<C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.jpg, id=67, 403.5075pt x 
 195.73125pt>
 File: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.jpg Graphic file (ty
 pe jpg)
  <use C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.jpg>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.j
-pg used on input line 208.
+pg used on input line 210.
 (pdftex.def)             Requested size: 284.52756pt x 138.01741pt.
 
-<C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg, id=67, 385.44pt x 1
+<C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg, id=68, 385.44pt x 1
 53.57375pt>
 File: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg Graphic file (t
 ype jpg)
  <use C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.
-jpg used on input line 213.
+jpg used on input line 215.
 (pdftex.def)             Requested size: 284.52756pt x 113.36627pt.
 
 [14 <C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg> <C:/inetpub/wwwr
 oot/auswertung/doc/img/entwurf-update.jpg> <C:/inetpub/wwwroot/auswertung/doc/i
-mg/entwurf-package.jpg>] (C:\inetpub\wwwroot\auswertung\doc\PHP.aux) ) 
+mg/entwurf-package.jpg>] [15]
+<C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, id=77, page=1, 845.1575pt x
+ 597.23125pt>
+File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
+
+ <use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
+Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
+e1 used on input line 236.
+(pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
+File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
+
+
+<use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
+Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
+e1 used on input line 236.
+(pdftex.def)             Requested size: 614.40643pt x 434.1708pt.
+File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
+
+
+<use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
+Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
+e1 used on input line 236.
+(pdftex.def)             Requested size: 614.40643pt x 434.1708pt.
+File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
+
+
+<use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
+Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
+e1 used on input line 236.
+(pdftex.def)             Requested size: 614.40643pt x 434.1708pt.
+File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
+
+
+<use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
+Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
+e1 used on input line 236.
+(pdftex.def)             Requested size: 614.40643pt x 434.1708pt.
+ [16 <C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page is rotated 90 deg
+rees>]
+Underfull \hbox (badness 10000) in paragraph at lines 248--250
+[]\OT1/cmr/m/n/10 Microsoft SQL Ser-ver Dri-ver for PHP:
+ []
+
+[17] (C:\inetpub\wwwroot\auswertung\doc\PHP.aux) ) 
 Here is how much of TeX's memory you used:
- 3808 strings out of 494045
- 51703 string characters out of 3148383
- 121150 words of memory out of 3000000
- 7038 multiletter control sequences out of 15000+200000
+ 3819 strings out of 494045
+ 51974 string characters out of 3148383
+ 121166 words of memory out of 3000000
+ 7047 multiletter control sequences out of 15000+200000
  9626 words of font info for 35 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  38i,18n,42p,1045b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.p
-fb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr17.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr6.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on PHP.pdf (14 pages, 447311 bytes).
+<C:/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbx10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr17.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr8.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmti10.pfb>
+Output written on PHP.pdf (17 pages, 498297 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
+ 129 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -33,6 +33,10 @@ Wir bieten unseren Kunden die Möglichkeit die Windows Updates über unserem WSUS 
 Um die Daten auszuwerten werden jedes Quartal alle freigegebenen Updates manuell in einer Excel Datei aufgenommen. Jedes Update wird danach in die entsprechende Produktklasse kopiert. Auf einem weiterem Excel Blatt wird ausgewertet, welcher Benutzer welche Produktklassen benötigt. Dieser Prozess ist sehr zeitintensiv und kostet pro Quartal circa eins bis zwei Arbeitstage.
 \subsection{Ziel der Arbeit}
 Um den Aufwand zu kürzen soll der Ablauf des Prozesses so weit wie möglich automatisiert werden. Dies soll mit PHP und einem MS SQL Server realisiert werden. Im ersten Schritt soll die Verbindung zwischen den Updates und den Produktklassen programmiert werden. Als zweiter Schritt werden die Kunden hinzugefügt und die Auswertung automatisiert. Diese Arbeit befasst sich mit dem ersten Schritt des Projekts.
+\subsection{Sourcecode}
+Der Sourcecode der Applikation wurde aus Platzgründen nicht in die Dokumentation eingefügt, jedoch kann er direkt aus dem GitHub Repository heruntergeladen werden. Der Link lautet https://github.com/pianogen/auswertung.
+\subsection{Bemerkung}
+Die Applikation wird auf einer virtuellen Maschine entwickelt und getestet, sobald alle das Projekt abgeschlossen ist, werden die Dateien auf den produktiven Server kopiert.
 \newpage
 \section{Requierements}
 \subsection{Einleitung}
@@ -81,7 +85,7 @@ Der zweite Teil des Projekts wird wie oben bereits erwähnt erst später entwickel
 \item Die Applikation muss dem Benutzer ermöglichen, neue Packageeinträge durch eine Maske in die Datenbank einzutragen. 
 \item Die Applikation muss dem Benutzer ermöglichen, über eine Maske nach Packageeinträge auf der Datenbank zu suchen. 
 \item Die Applikation muss dem Benutzer ermöglichen, über eine Maske Packageeinträge auf der Datenbank zu verändern und zu löschen. 
-\item Die Applikation muss dem Benutzer alle Packagezuweisungen eines Updateeintrag aufzeigen, wenn der Benutzer den Updateeintrag anschaut. 
+\item Die Applikation muss dem Benutzer alle Packagezuweisungen eines Updateeintrags aufzeigen, wenn der Benutzer den Updateeintrag anschaut. 
 \item Die Applikation muss dem Benutzer ermöglichen, über eine Maske ein Packageeintrag, dem entsprechendem Typ zuzuordnen. 
 \item Andersum soll die Applikation dem Benutzer alle Updateeinträge eines Packages aufzeigen, wenn der Benutzer den Packageeintrag anschaut. 
 \item Sobald der Benutzer einen neuen Updateeintrag eröffnen will, soll die Applikation ihm die Packages aufzeigen, damit er sogleich die Verknüpfung erstellen kann.
@@ -105,8 +109,6 @@ Falls eine dieser Überprüfungen fehlschlägt, darf der Eintrag nicht gespeichert 
 \subsection{Analyse der Anforderungen}
 \newpage
 \section{Entwicklung}
-\subsection{Einleitung}
-Dieses Kapitel des Dokuments handelt um die Planung und Entwicklung des Programms.  
 \subsection{Datenbank}
 Um die aufgenommenen Updates zu speichern, wird eine Datenbank benötigt. Vor der Erstellung der Datenbank wurde ein Entity Relationship Diagram erstellt. Auf der nächsten Seite befindet sich ein genaue Beschreibung der Tabellen und Attributen. Der Text in Klammern beschreibt die Eigenschaften der Attributen.
 \begin{figure}[htbp]
@@ -160,7 +162,7 @@ Wird für die Beziehung zwischen den Tabellen type und package benötigt.
 Dieses Attribut beinhaltet den Namen des Typs. Die Stringgrösse wird auf 10 gesetzt, da die momentan benötigten Typen relativ kurz sind
 \end{itemize}
 \subsection{Sofwarearchitektur}
-Das Programm wird mit der Sprache PHP entwickelt. Das ganze Programm wird nach dem MVC Konzept konzipiert. Das Programm muss folgende Funktionen anbieten.
+Das Programm wird mit der Sprache PHP entwickelt. Das ganze Programm wird nach dem MVC Konzept\footnote{MVC nach Vorlesung Webprogrammieren mit PHP\textbackslash MySQL} konzipiert. Das Programm muss folgende Funktionen anbieten.
 \begin{itemize}
 \item Suchen von Updates und Packages
 \item Erstellen, ändern und löschen von Updates
@@ -177,7 +179,7 @@ Der Controller ist für die Logik des Programm zuständig, der Controller arbeitet
 Die Verbindung der Controllerklassen mit den Modelklassen wird einfach implementiert sein. Eine Controllerklasse hat nur Zugriff auf die entsprechende Modelklasse, dies bedeutet das die Controllerklasse \textit{packages} hat nur Zugriff auf die Modelklasse \textit{class.packages}. \newline \newline 
 Die einzige Klasse, die diese Regel nicht befolgt ist die Klasse \textit{class.resolver}.
 \subsubsection{class.resolver}
-Die Klasse class.resolver hat die wichtigste Funktion in der Logik. Sie überprüft, welche Werte sich im POST und GET befinden, und führt somit die entsprechende Funktion in den entsprechenden Klassen aus.
+Die Klasse class.resolver hat die wichtigste Funktion in der Logik. Sie überprüft, welche Werte sich im POST und GET befinden, und führt somit die entsprechende Funktion in den entsprechenden Klassen aus. Die Klasse class.resolver wurde aus der Vorlesung Webprogrammieren mit PHP\textbackslash MySQL entnommen.
 \subsubsection{View}
 In der View befinden sich alle Dateien, die für das Visualisieren der Daten zuständig sind. Sie werden im Controller implementiert und stellen die entsprechenden abgefragten Daten grafisch dar.
 \newpage
@@ -215,4 +217,35 @@ Die Webseite besteht aus drei verschiedenen Ansichten. Eine für die Suche, eine 
 \end{figure}
 \newpage
 \section{Testkonzept}
+\subsection{Einleitung}
+Aus Zeitgründen wurde
+
+\section{Fazit}
+\subsection{Review}
+Der erste Teil des Projekts wurde vollständig implementiert und die Applikation, kann sobald die Dateien auf die produktive Umgebung verschoben werden genutzt werden.
+Das ganze Projekt war relativ einfach einzuschätzen, da nur Anforderungen und keine Wünsche vom Auftraggeber gegeben wurden. Jedoch habe ich die Zeit ein wenig unterschätzt, da ich nicht so gewandt bin mit PHP. Zusätzlich musste ich mich noch Leider wurde nicht das gesamte Testkonzept implementiert, da ich zwar PHPUnit installieren konnte, jedoch PHPUnit keine Teste durchführte. Als das Suchen einer Lösung zu zeitintensiv wurde, habe ich mich entschieden manuelle Testklassen zu schreiben, die in der CMD das Resultat der Tests ausgeben. 
+Der fertige erste Teil des Projekt wurde vom Auftragsgeber kontrolliert und angenommen.
+\subsection{Ausblick}
+Es stehen noch folgende offene Arbeiten aus:
+\begin{itemize}
+\item Die restlichen Tests implementieren
+\item Das Kopieren der Dateien auf den produktiven Server
+\item Die Implementation des zweiten Teil mit Planung, Entwicklung, Realisierung und Testen
+\end{itemize}
+\newpage
+\includepdf[pages=1,pagecommand=\section{Projetkplan}]{C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf}
+\begin{thebibliography}{4}
+\bibitem{1}
+	Klaus Pohl / Chris Rupp (Juni 2011):
+	\emph{Basiswissen Requirements Engineering}
+\bibitem{2}
+	Mahbouba Gharbi / Arne Koschel / Andreas Rausch / Gernot Starke (Dezember 2012):
+	\emph{Basiswissen für Softwarearchitekten}
+\bibitem{3}
+	Andreas Spillner / Tilo Linz (September 2012):
+	\emph{Basiswissen Softwaretest}
+\bibitem{4}
+	Microsoft SQL Server Driver for PHP:
+	http://php.net/manual/en/book.sqlsrv.php
+\end{thebibliography}
 \end{document}
