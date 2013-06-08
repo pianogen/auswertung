@@ -106,7 +106,6 @@ Beim Speichervorgang des neuen Eintrag soll das System folgende Einträge die dur
 \item Der Typ eines Packageeintrag darf nicht leer sein.
 \end{itemize}
 Falls eine dieser Überprüfungen fehlschlägt, darf der Eintrag nicht gespeichert werden. Die Anforderungen des Speicher- und Änderungsvorgangs sind identisch. Das Löschen eines Updateeintrag muss die Verknüpfung zu den zugeteilten Packages ebenfalls löschen. Das Löschen eines Packageeintrag muss wiederum die Verknüpfungen zu den implementierten Updates löschen.
-\subsection{Analyse der Anforderungen}
 \newpage
 \section{Entwicklung}
 \subsection{Datenbank}
@@ -218,18 +217,74 @@ Die Webseite besteht aus drei verschiedenen Ansichten. Eine für die Suche, eine 
 \newpage
 \section{Testkonzept}
 \subsection{Teststratgie}
-Aus Zeitgründen werden nur Modelklassen als Units getestet. Die Modelklasse sind hauptsächlich für die Datenbankanbindung und den Datenbankabfragen zuständig. Der Controller wird erst bei dem Intergrationstest herangezogen. Und die View wird zum Schluss bei den Systemtest getestet. Diese Teststrategie mach durchaus Sinn, da um die Controllerklassen komplett zu testen, die Resultate aus den Datenbankabfragen benötigt werden. Die View wird nur visuell getestet, da die Viewdateien relativ klein und übersichtlich sind. Der Systemtest wird neben der View, überprüfen ob die Anforderungen erfüllt wurden. Zum Schluss wird es noch einen Abnahmetest durch den Auftraggeber geben, dieser Test entscheidet, ob die Software freigegeben werden kann. 
-\subsection{Testwerkeug}
+Aus Zeitgründen werden nur Modelklassen als Units getestet. Die Modelklasse sind hauptsächlich für die Datenbankanbindung und den Datenbankabfragen zuständig. Der Controller wird erst bei dem Intergrationstest herangezogen. Und die View wird zum Schluss bei den Systemtest getestet. Diese Teststrategie mach durchaus Sinn, da um die Controllerklassen komplett zu testen, die Resultate aus den Datenbankabfragen benötigt werden. Die View wird nur visuell getestet, da die Viewdateien relativ klein und übersichtlich sind. Der Systemtest wird überprüfen, ob die Anforderungen erfüllt wurden. Zum Schluss wird es noch einen Abnahmetest durch den Auftraggeber geben, dieser Test entscheidet, ob die Software freigegeben werden kann. 
+\subsection{Testwerkzeug}
 Es wurde versucht, das PHPUnit Modul als Testwerkzeug in die Applikation zu implementieren, jedoch hat das nicht wie gewünscht geklappt. Somit wurde eine PHP Klasse mit manuellen assert-Methoden erstellt. Es wurde ein eigenes Testwerkzeug erstellt, welches durch die cmd aufgerufen werden kann, und die Testresultate in der cmd ausgibt. Dieses Testwerkzeug wird für die Unit und Integrationstests benutzt.
 \subsection{Unit Tests der Modelklassen}
-In der Modelklasse werden alle Methoden vereinzelt getestet, die benötigten GET- und POST-Werte werden mit Dummy Werte ausgeführten. In der untenstehenden Tabelle werden alle benötigten Tests aufgelistet. Die Resultatet werden im Nachhinein in der Tabelle eingetragen. \newline
-\begin{tabular}{|l|l|l|}
+In der Modelklasse werden alle Methoden vereinzelt getestet, die benötigten GET- und POST-Werte werden mit Dummy Werte ausgeführten. In der untenstehenden Tabelle werden alle benötigten Tests aufgelistet. Die Resultatet werden im Nachhinein in der Tabelle eingetragen. \newline \newline
+\begin{tabular}{|l|l|p{4cm}|p{3cm}|}
 \hline
-\textbf{Name} & \textbf{Was wird getestet} & \textbf{Resultat} \\ \hline
-constructTest() & Es wird getestet, ob die Datenbankverbindung aufgebaut werden kann. Falls die Verbindung aufgebaut werden kann wird ein True zurückgegeben. & Erfolgreich \\ \hline
-findIdTest() & Es wird getestet, ob mit Hilfe eines GET-Werts, ein Datensatz gefunden werden kann. Falls ein Datensatz gefunden wird, wird ein nicht leeres Objekt zurückgegeben. & Erfolgreich \\ \hline
-getPackackagesTest() & Es wird getestet, ob mit Hilfe eines GET-Wertes,  
+\textbf{Name} & \textbf{Wo} & \textbf{Was wird getestet} & \textbf{Resultat} \\ \hline
+constructTest() & Allen Klassen & Ob die Datenbankverbindung aufgebaut werden kann & Erwartet: True \newline Erfolgreich \\ \hline
+findIdTest() & mdl\_updates & Mit Hilfe eines GET-Werts wird ein Updates gesucht. & Erwartet: NotNull \newline Erfolgreich \\ \hline
+gpTest() & mdl\_updates & Es wird nach allen Packages gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
+gopTest() & mdl\_updates & Mit Hilfe eines GET-Werts werden alle Packages, die nicht für das Update sind gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
 \end{tabular}
+\newpage
+\begin{tabular}{|p{3cm}|l|p{4cm}|p{3cm}|}
+\hline
+\textbf{Name} & \textbf{Wo} & \textbf{Was wird getestet} & \textbf{Resultat} \\ \hline
+pTuTest() & mdl\_updates & Mit Hilfe eines GET-Werts werden alle Packages für das Update gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
+saveTest() & mdl\_updates & Es wird ein neuer Datensatz gespeichert & Erwartet: True \newline Erfolgreich \\ \hline
+updateTest() & mdl\_updates & Es wird ein vorhandener Datensatz geändert & Erwartet: True \newline Erfolgreich \\ \hline
+deleteTest() & mdl\_updates & Es wird ein vorhandener Datensatz gelöscht & Erwartet: True \newline Erfolgreich \\ \hline
+gspTest() & mdl\_packages & Mit Hilfe eines GET-Werts wird ein Package gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
+saveTest() \newline updateTest() \newline deleteTest() & mdl\_packages & Gleiches Tests wie bei den Methoden der Update-Klasse & Erwartet: True \newline Erfolgreich \\ \hline
+uTpTest() & mdl\_packages & Mit Hilfe eines GET-Werts werden alle Updates für das Package gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
+getTypesTest() & mdl\_packages & Mit Hilfe eines GET-Werts wird der Typ des Packages ermittelt & Erwartet: NotNull \newline Erfolgreich \\ \hline
+fAuTest() & mdl\_search & Es sollen alle Updates zurückgegeben werden & Erwartet: NotNull \newline Erfolgreich \\ \hline
+fspTest() & mdl\_search & Mit Hilfe eines Suchbegriffes alle betroffenen Packages zurückgeben & Erwartet: NotNull \newline Erfolgreich \\ \hline
+gatTest() & mdl\_search & Alle Typen zurückgegeben & Erwartet: NotNull \newline Erfolgreich \\ \hline
+\end{tabular}
+\newline \newline \newline
+Das sind die wichtigsten Test die für diese Applikation benötigt werden, man könnte noch Tests implementieren, die falsche Werte zurückgeben müssen, jedoch wurde wegen Zeitgründen auf diese Tests verzichtet.
+\newpage
+\subsection{Integrationstests}
+Die Integrationstest koppeln das Model und den Controller zusammen und überprüfen, ob das Zusammenspiel der beiden Komponenten auf Eingaben richtig reagiert. Der Aufbau ist bei jedem Integrationstest der Gleiche. Die Klasse class.resolver wird mit verschiedenen Eingaben aufgerufen und überprüft, ob Sie die richtigen Klassen und Methoden im Controller und im Model aufrufen. Zum Schluss wird überprüft, ob der Controller die richtigen Werte der View übergibt. \newline \newline
+Diese Tests sind sehr aufwendig und nur teilweise implementiert worden. Auf die einzelnen Tests wird nicht weiter eingegangen, da diese wie schon vorhin gesagt, im Aufbau sehr ähnlich sind.
+\subsection{Systemtest}
+Der Systemtest wird genutzt um zu überprüfen, ob alle Anforderungen erfüllt wurden. Bei dem Systemtest wird die Applikation aus den Augen des Auftraggebers betrachtet und dadurch entschieden, ob die Anforderung erfüllt wurde oder nicht.
+\newline \newline
+\textbf{Speichern, Ändern und Löschen von Updates und Packages} \newline
+Der Benutzer kann in jeweils zwei verschiedenen Masken Updates und Packages hinzufügen, ändern oder löschen. Eingabefelder die ein bestimmtes Format benötigen, werden vor dem Absenden überprüft. \newline \newline
+\textbf{Suchen von Updates und Packages} \newline
+Diese Anforderung wurde erfüllt, der Benutzer kann nach Updates und Packages suchen. Die Sucheingaben werden vor dem Absenden auf Richtigkeit überprüft. Somit kann der Benutzer keine Suchanfrage starten, wenn er nichts eingegeben hat oder unzulässige Zeichen benutzt. \newline \newline
+\textbf{Dem Package einen Typ zuordnen} \newline
+Der Benutzer muss jedem aufgenommenen Package einen Typ zuordnen, da jedes Packages einem Typ zugeordnet werden muss. Diese Aktion wird in der Package Management Maske gemacht. \newline \newline
+\textbf{Updates einen bestimmten Package aufzeigen} \newline
+Sobald der Benutzer ein Package öffnet werden auf der unteren Hälfe der Seite die Updates, die sich in diesem Package befinden, aufgezeigt. \newline \newline
+\textbf{Verknüpfung Updates Packages} \newline
+Diese Anforderung wurde erfüllt. Im Update Management kann der Benutzer das Update jederzeit einem Package hinzufügen oder wieder entfernen, ganz egal ob das Update schon vorhanden ist oder nicht. \newpage
+\textbf{Der Titel eines Updateeintrags darf nicht leer sein} \newline
+Diese Anforderung wurde mit Hilfe von JavaScript erfüllt, solange der Titel leer ist, ist der Knopf um den Eintrag zu speichern oder zu ändern deaktiviert.
+\newline \newline
+\textbf{KB Nummer darf nicht leer und muss numerisch sein} \newline
+Diese Anforderung wurde mit Hilfe von JavaScript erfüllt, solange der Wert der KB Nummer nicht numerisch ist, ist der Knopf um den Eintrag zu speichern oder zu ändern deaktiviert. \newline \newline
+\textbf{Veröffentlichungsdatum darf nicht leer sein} \newline
+Diese Anforderung wurde mit Hilfe von JavaScript erfüllt, solange das Feld des Veröffentlichungsdatum leer ist, ist der Knopf um den Eintrag zu speichern oder zu ändern deaktiviert. \newline \newline
+\textbf{Update kann mehreren Packages zugeteilt werden} \newline
+Diese Anforderung wurde erfüllt. Im Update Management werden alle Packages, egal ob das Update dem Package zugeteilt wurde oder nicht, angezeigt. Der Benutzer kann jeweils durch Auswahlboxen auswählen, welchem Package das Update zugeteilt ist und welchem nicht. \newline \newline
+\textbf{Update kann keinem Package zugeteilt sein}
+Diese Anforderung wurde erfüllt. Ein Update ohne Packagezuteilung gespeichert werden. \newline \newline
+\textbf{Rückzug eines Updates} \newline
+Diese Anforderung wurde erfüllt. Für diese Anforderung wurde ein eigenes Feld definiert. Sobald ein Update von Microsoft zurückgezogen wurde, kann man das Datum in diesem definierten Feld eingeben. \newline \newline
+\textbf{Datumsformat} \newline
+\newline \newline
+\textbf{Packagezuteilung und Freigabedatum} \newline
+Diese Anforderung wurde teilweise erfüllt. Sobald der Benutzer ein Freigabedatum eines Updates setzt und keine Packages auswählt, wird der Knopf um den Datensatz zu speichern deaktiviert. \newline \newline
+\textbf{Korrektes Speichern eines Packages} \newline
+Diese Anforderung wurde erfüllt. Ein Package kann gespeichert werden, sobald ein Titel eingetragen worden ist und ein Typ ausgewählt wurde, ansonsten ist der Knopf um das Package zu speichern oder zu ändern deaktiviert. 
+\newpage
 \section{Fazit}
 \subsection{Review}
 Der erste Teil des Projekts wurde vollständig implementiert und die Applikation, kann sobald die Dateien auf die produktive Umgebung verschoben werden genutzt werden.
@@ -238,7 +293,6 @@ Der fertige erste Teil des Projekt wurde vom Auftragsgeber kontrolliert und ange
 \subsection{Ausblick}
 Es stehen noch folgende offene Arbeiten aus:
 \begin{itemize}
-\item Die restlichen Tests implementieren
 \item Das Kopieren der Dateien auf den produktiven Server
 \item Die Implementation des zweiten Teil mit Planung, Entwicklung, Realisierung und Testen
 \end{itemize}
