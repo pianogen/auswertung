@@ -217,9 +217,19 @@ Die Webseite besteht aus drei verschiedenen Ansichten. Eine für die Suche, eine 
 \end{figure}
 \newpage
 \section{Testkonzept}
-\subsection{Einleitung}
-Aus Zeitgründen wurde
-
+\subsection{Teststratgie}
+Aus Zeitgründen werden nur Modelklassen als Units getestet. Die Modelklasse sind hauptsächlich für die Datenbankanbindung und den Datenbankabfragen zuständig. Der Controller wird erst bei dem Intergrationstest herangezogen. Und die View wird zum Schluss bei den Systemtest getestet. Diese Teststrategie mach durchaus Sinn, da um die Controllerklassen komplett zu testen, die Resultate aus den Datenbankabfragen benötigt werden. Die View wird nur visuell getestet, da die Viewdateien relativ klein und übersichtlich sind. Der Systemtest wird neben der View, überprüfen ob die Anforderungen erfüllt wurden. Zum Schluss wird es noch einen Abnahmetest durch den Auftraggeber geben, dieser Test entscheidet, ob die Software freigegeben werden kann. 
+\subsection{Testwerkeug}
+Es wurde versucht, das PHPUnit Modul als Testwerkzeug in die Applikation zu implementieren, jedoch hat das nicht wie gewünscht geklappt. Somit wurde eine PHP Klasse mit manuellen assert-Methoden erstellt. Es wurde ein eigenes Testwerkzeug erstellt, welches durch die cmd aufgerufen werden kann, und die Testresultate in der cmd ausgibt. Dieses Testwerkzeug wird für die Unit und Integrationstests benutzt.
+\subsection{Unit Tests der Modelklassen}
+In der Modelklasse werden alle Methoden vereinzelt getestet, die benötigten GET- und POST-Werte werden mit Dummy Werte ausgeführten. In der untenstehenden Tabelle werden alle benötigten Tests aufgelistet. Die Resultatet werden im Nachhinein in der Tabelle eingetragen. \newline
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Name} & \textbf{Was wird getestet} & \textbf{Resultat} \\ \hline
+constructTest() & Es wird getestet, ob die Datenbankverbindung aufgebaut werden kann. Falls die Verbindung aufgebaut werden kann wird ein True zurückgegeben. & Erfolgreich \\ \hline
+findIdTest() & Es wird getestet, ob mit Hilfe eines GET-Werts, ein Datensatz gefunden werden kann. Falls ein Datensatz gefunden wird, wird ein nicht leeres Objekt zurückgegeben. & Erfolgreich \\ \hline
+getPackackagesTest() & Es wird getestet, ob mit Hilfe eines GET-Wertes,  
+\end{tabular}
 \section{Fazit}
 \subsection{Review}
 Der erste Teil des Projekts wurde vollständig implementiert und die Applikation, kann sobald die Dateien auf die produktive Umgebung verschoben werden genutzt werden.

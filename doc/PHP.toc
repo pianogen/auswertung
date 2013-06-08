@@ -23,8 +23,10 @@
 \contentsline {subsubsection}{\numberline {3.2.5}index.php und JavaScript}{13}
 \contentsline {section}{\numberline {4}Entwurf}{14}
 \contentsline {section}{\numberline {5}Testkonzept}{15}
-\contentsline {subsection}{\numberline {5.1}Einleitung}{15}
+\contentsline {subsection}{\numberline {5.1}Teststratgie}{15}
+\contentsline {subsection}{\numberline {5.2}Testwerkeug}{15}
+\contentsline {subsection}{\numberline {5.3}Unit Tests der Modelklassen}{15}
 \contentsline {section}{\numberline {6}Fazit}{15}
 \contentsline {subsection}{\numberline {6.1}Review}{15}
-\contentsline {subsection}{\numberline {6.2}Ausblick}{15}
-\contentsline {section}{\numberline {7}Projetkplan}{16}
+\contentsline {subsection}{\numberline {6.2}Ausblick}{16}
+\contentsline {section}{\numberline {7}Projetkplan}{17}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.30)  6 JUN 2013 23:25
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.30)  8 JUN 2013 14:52
 entering extended mode
 **PHP.tex
 (C:\inetpub\wwwroot\auswertung\doc\PHP.tex
@@ -432,50 +432,55 @@ jpg used on input line 215.
 
 [14 <C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg> <C:/inetpub/wwwr
 oot/auswertung/doc/img/entwurf-update.jpg> <C:/inetpub/wwwroot/auswertung/doc/i
-mg/entwurf-package.jpg>] [15]
-<C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, id=77, page=1, 845.1575pt x
+mg/entwurf-package.jpg>]
+Overfull \hbox (558.68195pt too wide) in paragraph at lines 225--233
+[] 
+ []
+
+[15] [16]
+<C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, id=80, page=1, 845.1575pt x
  597.23125pt>
 File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
 
  <use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
-e1 used on input line 236.
+e1 used on input line 246.
 (pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
 
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
-e1 used on input line 236.
+e1 used on input line 246.
 (pdftex.def)             Requested size: 614.40643pt x 434.1708pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
 
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
-e1 used on input line 236.
+e1 used on input line 246.
 (pdftex.def)             Requested size: 614.40643pt x 434.1708pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
 
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
-e1 used on input line 236.
+e1 used on input line 246.
 (pdftex.def)             Requested size: 614.40643pt x 434.1708pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
 
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
-e1 used on input line 236.
+e1 used on input line 246.
 (pdftex.def)             Requested size: 614.40643pt x 434.1708pt.
- [16 <C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page is rotated 90 deg
+ [17 <C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page is rotated 90 deg
 rees>]
-Underfull \hbox (badness 10000) in paragraph at lines 248--250
+Underfull \hbox (badness 10000) in paragraph at lines 258--260
 []\OT1/cmr/m/n/10 Microsoft SQL Ser-ver Dri-ver for PHP:
  []
 
-[17] (C:\inetpub\wwwroot\auswertung\doc\PHP.aux) ) 
+[18] (C:\inetpub\wwwroot\auswertung\doc\PHP.aux) ) 
 Here is how much of TeX's memory you used:
  3819 strings out of 494045
  51974 string characters out of 3148383
@@ -493,9 +498,9 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmr8.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmti10.pfb>
-Output written on PHP.pdf (17 pages, 498297 bytes).
+Output written on PHP.pdf (18 pages, 501339 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
+ 132 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
