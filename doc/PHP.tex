@@ -279,6 +279,7 @@ Diese Anforderung wurde erfüllt. Ein Update ohne Packagezuteilung gespeichert we
 \textbf{Rückzug eines Updates} \newline
 Diese Anforderung wurde erfüllt. Für diese Anforderung wurde ein eigenes Feld definiert. Sobald ein Update von Microsoft zurückgezogen wurde, kann man das Datum in diesem definierten Feld eingeben. \newline \newline
 \textbf{Datumsformat} \newline
+Diese Anforderung wurde erfüllt. Nach dem Senden der Benutzereingabe wird überprüft, ob das Datumsformat gültig ist. Wenn das Format gültig ist, wird der Befehl ausgeführt, ansonsten wird der Benutzer auf das falsche Format hingewiesen.
 \newline \newline
 \textbf{Packagezuteilung und Freigabedatum} \newline
 Diese Anforderung wurde teilweise erfüllt. Sobald der Benutzer ein Freigabedatum eines Updates setzt und keine Packages auswählt, wird der Knopf um den Datensatz zu speichern deaktiviert. \newline \newline
@@ -288,7 +289,9 @@ Diese Anforderung wurde erfüllt. Ein Package kann gespeichert werden, sobald ein
 \section{Fazit}
 \subsection{Review}
 Der erste Teil des Projekts wurde vollständig implementiert und die Applikation, kann sobald die Dateien auf die produktive Umgebung verschoben werden genutzt werden.
-Das ganze Projekt war relativ einfach einzuschätzen, da nur Anforderungen und keine Wünsche vom Auftraggeber gegeben wurden. Jedoch habe ich die Zeit ein wenig unterschätzt, da ich nicht so gewandt bin mit PHP. Zusätzlich musste ich mich noch Leider wurde nicht das gesamte Testkonzept implementiert, da ich zwar PHPUnit installieren konnte, jedoch PHPUnit keine Teste durchführte. Als das Suchen einer Lösung zu zeitintensiv wurde, habe ich mich entschieden manuelle Testklassen zu schreiben, die in der CMD das Resultat der Tests ausgeben. 
+Das ganze Projekt war relativ einfach einzuschätzen, da nur Anforderungen und keine Wünsche vom Auftraggeber gegeben wurden. Jedoch habe ich die Zeit ein wenig unterschätzt, da ich nicht so gewandt bin mit PHP. Zusätzlich musste ich mich noch Leider wurde nicht das gesamte Testkonzept implementiert, da ich zwar PHPUnit installieren konnte, jedoch PHPUnit keine Teste durchführte. Als das Suchen einer Lösung zu zeitintensiv wurde, habe ich mich entschieden manuelle Testklassen zu schreiben, die in der CMD das Resultat der Tests ausgeben.
+\newline \newline
+Die Kombination PHP, IIS und MSSQL hat sich als nicht optional gezeigt. Die Installation von PHP auf dem IIS Server kann zu Komplikationen führen. Zusätzlich benötigt man einen zusätzlichen Treiber für die Kombination von PHP und dem MSSQL Server. Die Syntax von PHP\textbackslash MSSQL unterscheidet sich teilweise von der Syntax PHP\textbackslash MySQL. Zusätzlich gibt es im Internet nicht viele Hilfestellungen zur Kombination von PHP und MSSQL, dadurch kann die Suche nach einer Problemlösung recht lange dauern. \newline \newline
 Der fertige erste Teil des Projekt wurde vom Auftragsgeber kontrolliert und angenommen.
 \subsection{Ausblick}
 Es stehen noch folgende offene Arbeiten aus:
