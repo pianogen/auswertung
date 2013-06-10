@@ -1,0 +1,58 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{A}\relax \glsresetentrylist %
+\glsnonextpages \glossaryentryfield{Approvement Datum}{\glsnamefont{Approvement Datum}}{Tag an dem das Update einer Produktklasse zugeteilt wurde}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{8}}}\glsgroupskip
+\glsgroupheading{C}\relax \glsresetentrylist %
+\glsnonextpages \glossaryentryfield{cmd}{\glsnamefont{cmd}}{integrierter Windows Kommandozeileninterpreter}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{17}}}\glsgroupskip
+\glsgroupheading{E}\relax \glsresetentrylist %
+\glsnonextpages \glossaryentryfield{Entity Relationship Modell}{\glsnamefont{Entity Relationship Modell}}{kurz ERM, wird benötigt um einen Entwurf der Datenbank zu erstellen}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{9}}}\glsgroupskip
+\glsgroupheading{F}\relax \glsresetentrylist %
+\glsnonextpages \glossaryentryfield{Firewall}{\glsnamefont{Firewall}}{schützt internes Netzwerk vor unerlaubtem Zugriff von aussen}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{5}}}\glsgroupskip
+\glsgroupheading{G}\relax \glsresetentrylist %
+\glsnonextpages \glossaryentryfield{GitHub}{\glsnamefont{GitHub}}{webbasierter Hosting-Dienst für Sofware-Entwicklungsprojekte}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3\delimN 4}}}\glsgroupskip
+\glsgroupheading{I}\relax \glsresetentrylist %
+\glsnonextpages \glossaryentryfield{IIS}{\glsnamefont{IIS}}{Webserver von Microsoft}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{6}}}\glsgroupskip
+\glsgroupheading{J}\relax \glsresetentrylist %
+\glsnonextpages \glossaryentryfield{JavaScript}{\glsnamefont{JavaScript}}{clientsseitige Scriptsprache, die für dynamische Websites genutzt wird}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{15}}}\glsgroupskip
+\glsgroupheading{K}\relax \glsresetentrylist %
+\glsnonextpages \glossaryentryfield{KB}{\glsnamefont{KB}}{eine Nummer die Microsoft den Updates gibt um sie eindeutig zu identifizieren}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{10}}}\glsgroupskip
+\glsgroupheading{M}\relax \glsresetentrylist %
+\glsnonextpages \glossaryentryfield{MSSQL}{\glsnamefont{MSSQL}}{Datenbankmanagementsystem von Microsoft}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{21}}}%
+\glsnonextpages \glossaryentryfield{MVC}{\glsnamefont{MVC}}{Model-View-Controller, ist ein Konzept zur Programmierung von Websites}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{13}}}%
+\glsnonextpages \glossaryentryfield{MySQL}{\glsnamefont{MySQL}}{Datenbankmanagementsystem, welches Open Source ist}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{13}}}\glsgroupskip
+\glsgroupheading{P}\relax \glsresetentrylist %
+\glsnonextpages \glossaryentryfield{PHP}{\glsnamefont{PHP}}{Serverseitige Scriptsprache, die hauptsächlich zur Erstellung von dynamischen Websites genutzt wird}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3\delimN 4}}}%
+\glsnonextpages \glossaryentryfield{PHPUnit}{\glsnamefont{PHPUnit}}{freies Framework, welches zum Testen von PHP-Skripten dient}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{17}}}%
+\glsnonextpages \glossaryentryfield{Produktklasse}{\glsnamefont{Produktklasse}}{eine Sammlung von Updates von einem Produkt}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3\delimN 4}}}\glsgroupskip
+\glsgroupheading{W}\relax \glsresetentrylist %
+\glsnonextpages \glossaryentryfield{Webserver}{\glsnamefont{Webserver}}{dient dem Hosting von Websites}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{5}}}%
+\glsnonextpages \glossaryentryfield{WSUS}{\glsnamefont{WSUS}}{Windows Server Update Services, wurde von Microsoft entwickelt um Updates in einem Netzwerk zu verteilen}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{3\delimN 4}}}%
+\end{theglossary}\glossarypostamble

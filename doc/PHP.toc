@@ -1,33 +1,34 @@
 \select@language {ngerman}
-\contentsline {section}{\numberline {1}Einleitung}{3}
-\contentsline {subsection}{\numberline {1.1}Ausgangslage}{3}
-\contentsline {subsection}{\numberline {1.2}Ziel der Arbeit}{3}
-\contentsline {subsection}{\numberline {1.3}Sourcecode}{3}
-\contentsline {subsection}{\numberline {1.4}Bemerkung}{3}
-\contentsline {section}{\numberline {2}Requierements}{4}
-\contentsline {subsection}{\numberline {2.1}Einleitung}{4}
-\contentsline {subsection}{\numberline {2.2}Allgemeine \"Ubersicht}{4}
-\contentsline {subsection}{\numberline {2.3}Anforderungen}{6}
-\contentsline {section}{\numberline {3}Entwicklung}{8}
-\contentsline {subsection}{\numberline {3.1}Datenbank}{8}
-\contentsline {subsubsection}{\numberline {3.1.1}Tabelle update}{9}
-\contentsline {subsubsection}{\numberline {3.1.2}Tabelle update\_package}{9}
-\contentsline {subsubsection}{\numberline {3.1.3}Tabelle package}{10}
-\contentsline {subsubsection}{\numberline {3.1.4}Tabelle type}{10}
-\contentsline {subsection}{\numberline {3.2}Sofwarearchitektur}{10}
-\contentsline {subsubsection}{\numberline {3.2.1}Model}{12}
-\contentsline {subsubsection}{\numberline {3.2.2}Controller}{12}
-\contentsline {subsubsection}{\numberline {3.2.3}class.resolver}{12}
-\contentsline {subsubsection}{\numberline {3.2.4}View}{12}
-\contentsline {subsubsection}{\numberline {3.2.5}index.php und JavaScript}{13}
-\contentsline {section}{\numberline {4}Entwurf}{14}
-\contentsline {section}{\numberline {5}Testkonzept}{15}
-\contentsline {subsection}{\numberline {5.1}Teststratgie}{15}
-\contentsline {subsection}{\numberline {5.2}Testwerkzeug}{15}
-\contentsline {subsection}{\numberline {5.3}Unit Tests der Modelklassen}{15}
-\contentsline {subsection}{\numberline {5.4}Integrationstests}{17}
-\contentsline {subsection}{\numberline {5.5}Systemtest}{17}
-\contentsline {section}{\numberline {6}Fazit}{19}
-\contentsline {subsection}{\numberline {6.1}Review}{19}
-\contentsline {subsection}{\numberline {6.2}Ausblick}{19}
-\contentsline {section}{\numberline {7}Projetkplan}{20}
+\contentsline {section}{Glossary}{3}
+\contentsline {section}{\numberline {1}Einleitung}{4}
+\contentsline {subsection}{\numberline {1.1}Ausgangslage}{4}
+\contentsline {subsection}{\numberline {1.2}Ziel der Arbeit}{4}
+\contentsline {subsection}{\numberline {1.3}Sourcecode}{4}
+\contentsline {subsection}{\numberline {1.4}Bemerkung}{4}
+\contentsline {section}{\numberline {2}Requirements}{5}
+\contentsline {subsection}{\numberline {2.1}Einleitung}{5}
+\contentsline {subsection}{\numberline {2.2}Allgemeine \"Ubersicht}{5}
+\contentsline {subsection}{\numberline {2.3}Anforderungen}{7}
+\contentsline {section}{\numberline {3}Konzept}{9}
+\contentsline {subsection}{\numberline {3.1}Entwurf}{9}
+\contentsline {subsubsection}{\numberline {3.1.1}Datenbank}{9}
+\contentsline {subsubsection}{\numberline {3.1.2}GUI}{11}
+\contentsline {subsection}{\numberline {3.2}Sofwarearchitektur}{13}
+\contentsline {subsubsection}{\numberline {3.2.1}Model}{13}
+\contentsline {subsubsection}{\numberline {3.2.2}Controller}{13}
+\contentsline {subsubsection}{\numberline {3.2.3}resolver}{13}
+\contentsline {subsubsection}{\numberline {3.2.4}View}{15}
+\contentsline {subsubsection}{\numberline {3.2.5}index.php und JavaScript}{15}
+\contentsline {section}{\numberline {4}Umsetzung}{16}
+\contentsline {subsection}{\numberline {4.1}Installation}{16}
+\contentsline {subsection}{\numberline {4.2}Vorgehen}{16}
+\contentsline {section}{\numberline {5}Testkonzept}{17}
+\contentsline {subsection}{\numberline {5.1}Teststratgie}{17}
+\contentsline {subsection}{\numberline {5.2}Testwerkzeug}{17}
+\contentsline {subsection}{\numberline {5.3}Unit Tests der Modelklassen}{17}
+\contentsline {subsection}{\numberline {5.4}Integrationstests}{19}
+\contentsline {subsection}{\numberline {5.5}Systemtest}{19}
+\contentsline {section}{\numberline {6}Fazit}{21}
+\contentsline {subsection}{\numberline {6.1}Review}{21}
+\contentsline {subsection}{\numberline {6.2}Ausblick}{21}
+\contentsline {section}{\numberline {7}Projetkplan}{22}

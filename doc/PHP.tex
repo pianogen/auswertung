@@ -6,9 +6,10 @@
 \usepackage{multirow}
 \usepackage{threeparttable}
 \usepackage{lscape}
-\usepackage{amsmath}
 \usepackage{pdfpages}
 \usepackage{fancyhdr}
+\usepackage[toc]{glossaries}
+\makeglossaries
 \pagestyle{fancy}
 \fancyhead[LE,RO]{\slshape \rightmark}
 \fancyhead[LO,RE]{\slshape \leftmark}
@@ -16,6 +17,7 @@
 \fancyfoot[L]{Gennaro Piano}
 \fancyfoot[R]{\today}
 \renewcommand{\footrulewidth}{0.4pt}
+
 \begin{document}
 
 \title{Automatisierung der WSUS Auswertung
@@ -30,52 +32,72 @@
 	\includegraphics[width=10cm]{wsus.jpg}
 		\label{fig:logo}
 \end{figure}
-
+\newglossaryentry{MSSQL}{name=MSSQL,description={Datenbankmanagementsystem von Microsoft},nonumberlist}
+\newglossaryentry{WSUS}{name=WSUS,description={Windows Server Update Services, wurde von Microsoft entwickelt um Updates in einem Netzwerk zu verteilen},nonumberlist}
+\newglossaryentry{Produktklasse}{name=Produktklasse,description={eine Sammlung von Updates von einem Produkt},nonumberlist}
+\newglossaryentry{PHP}{name=PHP,description={Serverseitige Scriptsprache, die hauptsächlich zur Erstellung von dynamischen Websites genutzt wird},nonumberlist}
+\newglossaryentry{GitHub}{name=GitHub,description={webbasierter Hosting-Dienst für Sofware-Entwicklungsprojekte},nonumberlist}
+\newglossaryentry{Firewall}{name=Firewall,description={schützt internes Netzwerk vor unerlaubtem Zugriff von aussen},nonumberlist}
+\newglossaryentry{Webserver}{name=Webserver,description={dient dem Hosting von Websites},nonumberlist}
+\newglossaryentry{IIS}{name=IIS,description={Webserver von Microsoft},nonumberlist}
+\newglossaryentry{Entity Relationship Modell}{name=Entity Relationship Modell,description={kurz ERM, wird benötigt um einen Entwurf der Datenbank zu erstellen},nonumberlist}
+\newglossaryentry{KB}{name=KB,description={eine Nummer die Microsoft den Updates gibt um sie eindeutig zu identifizieren},nonumberlist}
+\newglossaryentry{MVC}{name=MVC, description={Model-View-Controller, ist ein Konzept zur Programmierung von Websites},nonumberlist}
+\newglossaryentry{MySQL}{name=MySQL, description={Datenbankmanagementsystem, welches Open Source ist},nonumberlist}
+\newglossaryentry{JavaScript}{name=JavaScript, description={clientsseitige Scriptsprache, die für dynamische Websites genutzt wird},nonumberlist}
+\newglossaryentry{PHPUnit}{name=PHPUnit, description={freies Framework, welches zum Testen von PHP-Skripten dient},nonumberlist}
+\newglossaryentry{cmd}{name=cmd, description={integrierter Windows Kommandozeileninterpreter},nonumberlist}
+\newglossaryentry{Approvement Datum}{name=Approvement Datum, description={Tag an dem das Update einer Produktklasse zugeteilt wurde},nonumberlist}
 \newpage \thispagestyle{empty}
 \tableofcontents
-
+\newpage \thispagestyle{empty}
+\glsaddall
+\printglossaries
+\newpage
 \section{Einleitung}
 \subsection{Ausgangslage}
-Wir bieten unseren Kunden die Möglichkeit die Windows Updates über unserem WSUS Server herunterzuladen. Durch dieses Angebot muss sich der Kunde nicht mehr über fehlerhaften Updates kümmern, da wir die Updates zuerst in einer Testumgebung testen und diese danach freigeben. Um die Updateverwaltung einfach zu halten wurden auf dem WSUS Server Produktklassen erstellt. Computer und Server von Kunden die unser Angebot nutzen möchten, werden den entsprechenden Produktklassen zugeteilt. Updates die freigegeben sind werden wiederum den entsprechenden Produktklassen zugeteilt und somit auf den Geräten der Kunden installiert. Dieses System ist gut durchdacht, jedoch ist es sehr kompliziert diese Daten auszuwerten. \newline \newline
-Um die Daten auszuwerten werden jedes Quartal alle freigegebenen Updates manuell in einer Excel Datei aufgenommen. Jedes Update wird danach in die entsprechende Produktklasse kopiert. Auf einem weiterem Excel Blatt wird ausgewertet, welcher Kunde welche Produktklassen benötigt. Dieser Prozess ist sehr zeitintensiv und kostet pro Quartal circa eins bis zwei Arbeitstage.
+Wir bieten unseren Kunden die Möglichkeit die Windows Updates über unserem \gls{WSUS} Server herunterzuladen. Durch dieses Angebot muss sich der Kunde nicht mehr über fehlerhafte Updates kümmern, da wir die Updates zuerst in einer Testumgebung testen und diese danach freigeben. Um die Updateverwaltung einfach zu halten wurden auf dem WSUS Server Produktklassen erstellt. Computer und Server von Kunden die das Angebot nutzen, werden den entsprechenden Produktklassen zugeteilt. Updates die freigegeben sind werden wiederum den entsprechenden Produktklassen zugeteilt und somit auf den Geräten der Kunden installiert. Dieses System ist gut durchdacht, jedoch ist die Auswertung der Daten sehr aufwendig. \newline \newline
+Um die Daten auszuwerten werden jeden Monat alle freigegebenen Updates manuell in einer Excel Datei aufgenommen. Jedes Update wird danach in die entsprechende \gls{Produktklasse} kopiert. Auf einem weiterem Excel Blatt wird ausgewertet, welcher Kunde welche Produktklassen benötigt. Dieser Prozess ist sehr zeitintensiv und kostet pro Quartal circa ein bis zwei Arbeitstage.
 \subsection{Ziel der Arbeit}
-Um den Aufwand zu kürzen soll der Ablauf des Prozesses so weit wie möglich automatisiert werden. Dies soll mit PHP und einem MS SQL Server realisiert werden. Im ersten Schritt soll die Verbindung zwischen den Updates und den Produktklassen programmiert werden. Als zweiter Schritt werden die Kunden hinzugefügt und die Auswertung automatisiert. Diese Arbeit befasst sich mit dem ersten Schritt des Projekts.
+Um den Aufwand zu kürzen soll der Ablauf des Prozesses so weit wie möglich automatisiert werden. Dies soll mit \gls{PHP} und einem MSSQL Server realisiert werden. Im ersten Schritt soll die Verbindung zwischen den Updates und den Produktklassen programmiert werden. Als zweiter Schritt werden die Kunden hinzugefügt und die Auswertung automatisiert. Diese Arbeit befasst sich mit dem ersten Schritt des Projekts.
 \subsection{Sourcecode}
-Der Sourcecode der Applikation wurde aus Platzgründen nicht in die Dokumentation eingefügt, jedoch kann er direkt aus dem GitHub Repository heruntergeladen werden. Der Link lautet https://github.com/pianogen/auswertung.
+Der Sourcecode der Applikation wurde aus Platzgründen nicht in die Dokumentation eingefügt, jedoch kann er direkt aus dem \gls{GitHub} Repository heruntergeladen werden. Das Repository befindet sich unter https://github.com/pianogen/auswertung.
 \subsection{Bemerkung}
 Die Applikation wird auf einer virtuellen Maschine entwickelt und getestet, sobald das Projekt abgeschlossen ist, werden die Dateien auf den produktiven Server kopiert.
 \newpage
-\section{Requierements}
+\section{Requirements}
 \subsection{Einleitung}
 \textbf{Zweck} \newline
-Dieser Teil des Dokuments befasst sich mit den Anforderungen, des Projekts. Die Anforderungen werden mit dem Auftraggeber besprochen. Erst wenn die Anforderungen vom Auftraggeber bestätigt worden sind und nach seiner Meinung alles abgedeckt ist, wird das Projekt freigegeben.
+Dieser Teil des Dokuments befasst sich mit den Anforderungen des Projekts. Die Anforderungen werden mit dem Auftraggeber besprochen. Erst nachdem die Anforderungen vom Auftraggeber bestätigt worden sind und nach seiner Meinung alles abgedeckt ist, wird das Projekt freigegeben.
 \newline
 \newline
 \textbf{Systemumfang} \newline
-Das System wird für den internen Gebrauch entwickelt und soll von aussen nicht zugänglich sein. Somit besteht kein Bedarf, die Applikation vor unerlaubten Zugriff zu schützen, da dies die Firewall handhabt. 
+Das System wird für den internen Gebrauch entwickelt und soll von aussen nicht zugänglich sein. Somit besteht kein Bedarf, die Applikation vor unerlaubtem Zugriff zu schützen, da dies die \gls{Firewall} handhabt. 
 \newline
 \newline
 \textbf{Auftraggeber} \newline
-Der Auftraggeber dieses Projekts ist zugleich der interne technische Leiter der Firma. Somit wird das Projekt als internes Projekt gehandhabt. Der technische Leiter ist kein Programmierer und stellt deswegen keine technische Anforderungen an das Projekt. Der technische Leiter wird für dieses Projekt als Kunde angesehen.\newline \newline
+Der Auftraggeber dieses Projekts ist zugleich der interne technische Leiter der Firma. Somit wird das Projekt als internes Projekt gehandhabt. Der technische Leiter ist kein Entwickler und stellt deswegen keine technische Anforderungen an das Projekt. Der technische Leiter wird für dieses Projekt als Kunde betrachtet.\newline \newline
 \subsection{Allgemeine Übersicht}
 \textbf{Systemumfeld} \newline
-Diese Applikation benötigt einen Webserver und eine Schnittstelle zu einer Microsoft SQL Datenbank. Der WSUS Server gehört auch zum Systemumfeld, jedoch ist die Verbindung zwischen dem WSUS Server und der Applikation nur abstrakt, da die entnommenen Informationen aus dem WSUS Server manuell in der Applikation aufgenommen werden.
+Diese Anwendung benötigt einen \gls{Webserver} und eine Schnittstelle zu einer Microsoft SQL Datenbank. Der WSUS Server gehört auch zum Systemumfeld, jedoch ist die Verbindung zwischen dem WSUS Server und der Anwendung nur abstrakt, da die entnommenen Informationen aus dem WSUS Server manuell in die Anwendung aufgenommen werden.
 \begin{figure}[htbp]
 		\centering
-	\includegraphics[width=10cm]{C:/inetpub/wwwroot/auswertung/doc/img/Systemumfeld.jpg}
+	\includegraphics[width=9cm]{C:/inetpub/wwwroot/auswertung/doc/img/Systemumfeld.jpg}
 		\label{fig:Systemumfeld}
+		\caption{Systemumfeld}
 \end{figure}
 \newpage
 \parindent0pt \textbf{Architekturbeschreibung} \newline
-Die PHP Applikation wird auf dem schon vorhandenen Webserver implementiert. Es handelt sich um einen IIS, dies ist der Webserver von Microsoft. Der IIS unterstützt von sich aus kein PHP. Somit muss der PHP Interpreter nachgerüstet werden. Der PHP Interpreter wird mit dem integrierten Webplattform Installer installiert. Für die Datenbankanbindung wird ebenfalls der vorhandene SQL Server benutzt. Auf diesem Server wird eine neue Datenbank und ein neuer Datenbankbenutzer erstellt. Der neue Benutzer wird nur auf diese Datenbank Zugriff haben, zugleich wird er der einzige Benutzer sein, der auf die neue Datenbank Zugriff hat. Der Webserver und der SQL Server befinden sich physikalisch auf dem gleichen Server, somit ist hardwaremässig nur ein Server von den Veränderungen betroffen. Der PHP Interpreter benötigt eine Schnittstelle um auf die Datenbank zu lesen und zu schreiben, die Schnittstelle zwischen PHP und einem Microsoft SQL Server wird nicht automatisch installiert und muss somit manuell nachinstalliert werden.
+Die PHP Applikation wird auf dem schon vorhandenen Webserver implementiert. Es handelt sich um einen \gls{IIS}, dies ist der Webserver von Microsoft. Der IIS unterstützt von sich aus kein PHP. Somit muss der PHP Interpreter nachgerüstet werden. Der PHP Interpreter wird mit dem integrierten Webplattform Installer installiert. Für die Datenbankanbindung wird ebenfalls der vorhandene SQL Server benutzt. Auf diesem Server wird eine neue Datenbank und ein neuer Datenbankbenutzer erstellt. Der neue Benutzer wird nur auf diese Datenbank Zugriff haben und er wird der einzige Benutzer sein, der auf die neue Datenbank Zugriff hat. Der Webserver und der SQL Server befinden sich physikalisch auf dem gleichen Server, somit ist nur ein Server von den Veränderungen betroffen. Der PHP Interpreter benötigt eine Schnittstelle um auf die Datenbank zu lesen und zu schreiben. Die Schnittstelle zwischen PHP und einem Microsoft SQL Server wird nicht automatisch installiert und muss somit manuell nachinstalliert werden.
 \newline
 \newline
 \textbf{Systemfunktionalität} \newline
 Das Use Case Diagramm soll die Funktionalität des Systems aufzeigen.
 \begin{figure}[htbp]
 		\centering
-	\includegraphics[width=14.5cm]{C:/inetpub/wwwroot/auswertung/doc/img/Use_Case.jpg}
+	\includegraphics[width=13.5cm]{C:/inetpub/wwwroot/auswertung/doc/img/Use_Case.jpg}
 		\label{fig:UseCaseDiagramm}
+		\caption{Use Case Diagramm}
 \end{figure}
 \newpage
 \parindent0pt \textbf{Nutzer und Zielgruppen} \newline
@@ -89,13 +111,13 @@ Der zweite Teil des Projekts wird wie oben bereits erwähnt erst später entwickel
 \item Die Applikation muss dem Benutzer ermöglichen, neue Updateeinträge durch eine Maske in die Datenbank einzutragen. 
 \item Die Applikation muss dem Benutzer ermöglichen, über eine Maske nach Updateeinträge auf der Datenbank zu suchen. 
 \item Die Applikation muss dem Benutzer ermöglichen, über eine Maske Updateeinträge auf der Datenbank zu verändern und zu löschen. 
-\item Die Applikation muss dem Benutzer ermöglichen, neue Packageeinträge durch eine Maske in die Datenbank einzutragen. 
-\item Die Applikation muss dem Benutzer ermöglichen, über eine Maske nach Packageeinträge auf der Datenbank zu suchen. 
-\item Die Applikation muss dem Benutzer ermöglichen, über eine Maske Packageeinträge auf der Datenbank zu verändern und zu löschen. 
-\item Die Applikation muss dem Benutzer alle Packagezuweisungen eines Updateeintrags aufzeigen, wenn der Benutzer den Updateeintrag anschaut. 
-\item Die Applikation muss dem Benutzer ermöglichen, über eine Maske ein Packageeintrag, dem entsprechendem Typ zuzuordnen. 
-\item Andersum soll die Applikation dem Benutzer alle Updateeinträge eines Packages aufzeigen, wenn der Benutzer den Packageeintrag anschaut. 
-\item Sobald der Benutzer einen neuen Updateeintrag eröffnen will, soll die Applikation ihm die Packages aufzeigen, damit er sogleich die Verknüpfung erstellen kann.
+\item Die Applikation muss dem Benutzer ermöglichen, neue Produktklasseneinträge durch eine Maske in die Datenbank einzutragen. 
+\item Die Applikation muss dem Benutzer ermöglichen, über eine Maske nach Produktklasseneinträge auf der Datenbank zu suchen. 
+\item Die Applikation muss dem Benutzer ermöglichen, über eine Maske Produktklasseneinträge auf der Datenbank zu verändern und zu löschen. 
+\item Die Applikation muss dem Benutzer alle Produktklassen eines Updateeintrags aufzeigen, wenn der Benutzer den Updateeintrag betrachtet. 
+\item Die Applikation muss dem Benutzer ermöglichen, über eine Maske ein Produktklasseneintrag, dem entsprechendem Typ zuzuordnen. 
+\item Andersum soll die Applikation dem Benutzer alle Updateeinträge eines Produktklassen aufzeigen, wenn der Benutzer einen Produktklasseneintrag anschaut. 
+\item Sobald der Benutzer einen neuen Updateeintrag eröffnen will, soll die Applikation ihm die Produktklassen aufzeigen, damit er sogleich die Verknüpfung erstellen kann.
 \end{itemize}
 \newpage
 Beim Speichervorgang des neuen Eintrags soll das System folgende Einträge, die durch den Benutzer erfolgt sind, überprüfen:
@@ -103,27 +125,29 @@ Beim Speichervorgang des neuen Eintrags soll das System folgende Einträge, die d
 \item Der Titel eines Updateeintrag darf nicht leer sein.
 \item Die KB Nummer eines Updateeintrags darf nicht leer sein und muss einen numerischen Wert haben.
 \item Das Veröffentlichungsdatum eines Updateeintrags darf nicht leer sein.
-\item Ein Updateeintrag kann mehreren Packages zugeteilt werden.
+\item Ein Updateeintrag kann mehreren Produktlassen zugeteilt werden.
 \item Datumsfelder werden nur als dd.mm.JJJJ angenommen
-\item Ein Updateeintrag kann keinem Package zugeteilt werden.
-\item Ein Update kann von Microsoft auch zurückgezogen werden, dies sollte ebenfalls im Datensatz aufgenommen werden können. Dieser kann auch leer sein.
-\item Sobald der ein Update mindestens einem Package zugeteilt worden ist, muss der Benutzer auch ein Approvement Daten setzen. 
-\item Falls das Update keinem Package zugeteilt worden ist, darf kein Approvement Datum gesetzt sein.
-\item Der Titel eines Packageeintrag darf nicht leer sein.
-\item Der Typ eines Packageeintrag darf nicht leer sein.
+\item Ein Updateeintrag kann keiner Produktlassen zugeteilt sein.
+\item Ein Update kann von Microsoft auch zurückgezogen werden, dies sollte ebenfalls im Datensatz aufgenommen werden können.
+\item Sobald ein Update mindestens einer Produktklasse zugeteilt worden ist, muss der Benutzer auch ein \gls{Approvement Datum} setzen. 
+\item Falls das Update keiner Produktklasse zugeteilt worden ist, darf kein Approvement Datum gesetzt sein.
+\item Der Titel eines Produktklasseneintrags darf nicht leer sein.
+\item Der Typ eines Produktklasseneintrags darf nicht leer sein.
 \end{itemize}
-Falls eine dieser Überprüfungen fehlschlägt, darf der Eintrag nicht gespeichert werden. Die Anforderungen des Speicher- und Änderungsvorgangs sind identisch. Das Löschen eines Updateeintrag muss die Verknüpfung zu den zugeteilten Packages ebenfalls löschen. Das Löschen eines Packageeintrag muss wiederum die Verknüpfungen zu den implementierten Updates löschen.
+Falls eine dieser Überprüfungen fehlschlägt, darf der Eintrag nicht gespeichert werden. Die Anforderungen des Speicher- und Änderungsvorgangs sind identisch. Das Löschen eines Updateeintrags muss die Verknüpfung zu den zugeteilten Produktklassen ebenfalls löschen. Das Löschen eines Produktklasseneintrags muss wiederum die Verknüpfungen zu den implementierten Updates löschen.
 \newpage
-\section{Entwicklung}
-\subsection{Datenbank}
-Um die aufgenommenen Updates zu speichern wird eine Datenbank benötigt. Vor der Erstellung der Datenbank wurde ein Entity Relationship Diagram erstellt. Auf der nächsten Seite befindet sich ein genaue Beschreibung der Tabellen und Attribute. Der Text in Klammern beschreibt die Eigenschaften der Attribute.
+\section{Konzept}
+\subsection{Entwurf}
+\subsubsection{Datenbank}
+Um die aufgenommenen Updates zu speichern wird eine Datenbank benötigt. Vor der Erstellung der Datenbank wurde ein \gls{Entity Relationship Modell} erstellt. Auf der nächsten Seite befindet sich ein genaue Beschreibung der Tabellen und Attribute. Der Text in Klammern beschreibt die Eigenschaften der Attribute.
 \begin{figure}[htbp]
 		\centering
 	\includegraphics[width=14.5cm]{C:/inetpub/wwwroot/auswertung/doc/img/Datenbank.jpg}
 		\label{fig:Datenbank}
+		\caption{Datenbankentwurf}
 \end{figure}
 \newpage
-\subsubsection{Tabelle update}
+\textbf{Tabelle update} \newline
 In dieser Tabelle befinden sich alle Informationen, die ein Update benötigt.
 \begin{itemize}
 \item \textbf{id} (Primärschlüssel, int, auto increment, NOT NULL) \newline 
@@ -131,7 +155,7 @@ Wird für die Verbindung zur Tabelle update\_package benötigt.
 \item \textbf{name} (varchar(400), NOT NULL) \newline 
 Das ist der Titel des Updates, da der Titel recht lange sein kann, wird der String auf 400 Zeichen gesetzt. Diese Attribut ist ein Pflichtfeld.
 \item \textbf{kb} (int, NOT NULL) \newline
-Das ist die KB Nummer\footnote{Knowlegde Base Number: Wird für Microsoft genutzt, um Updates eindeutig zu kennzeichnen} des Updates. Dieses Attribut wurde nicht als Primary Key benutzt, da es schon vorgekommen ist, das zwei Updates die selbe KB Nummer haben. Dieses Attribut ist ein Pflichtfeld, da jedes Update eine KB Nummer hat.
+Das ist die KB Nummer\footnote{Knowlegde Base Number: Wird für Microsoft genutzt, um Updates eindeutig zu kennzeichnen} des Updates. Dieses Attribut wurde nicht als Primary Key benutzt, da es schon vorgekommen ist, das zwei Updates die selbe KB Nummer haben. Dieses Attribut ist ein Pflichtfeld, da jedes Update eine \gls{KB} Nummer hat.
 \item \textbf{release} (date, NOT NULL) \newline
 Dieses Attribut beinhaltet das Erscheinungsdatum des Updates. Es ist ein Pflichtfeld, da jedes Update dass eingetragen wird, schon erschienen ist.
 \item \textbf{decline} (date) \newline
@@ -141,137 +165,145 @@ Dieses Attribut beinhaltet das Datum, an dem das Update für die Clients freigege
 \item \textbf{approve\_srv} (date) \newline
 Dieses Attribut beinhaltet das Datum, an dem das Update für die Server freigegeben wurde. Dieses Feld darf leer sein, da nicht jedes Update zwingend für Server ist.
 \end{itemize}
-\subsubsection{Tabelle update\_package}
+\textbf{Tabelle update\_package} \newline
 Diese Tabelle ist eine Zwischentabelle. Durch diese Tabelle wird die Beziehung zwischen den Tabellen update und package ermöglicht. In dieser Tabelle besteht der Primärschlüssel aus zwei Attributen.
 \begin{itemize}
 \item \textbf{updateId} (Primary Key, int, NOT NULL) \newline 
-Dieses Attribut enthält von jedem Update, welches mit einem Package verknüpft wurde, den entsprechenden Fremdschlüssel.
+Dieses Attribut enthält von jedem Update, welches mit einer Produktklasse verknüpft wurde, den entsprechenden Fremdschlüssel.
 \item \textbf{packageId} (Primary Key, int, NOT NULL) \newline
-Dieses Attribut enthält von jedem Package, welches mit einem Update verknüpft wurde, den entsprechenden Fremdschlüssel.
+Dieses Attribut enthält von jeder Produktklasse, welches mit einem Update verknüpft wurde, den entsprechenden Fremdschlüssel.
 \end{itemize}
-\subsubsection{Tabelle package}
-Diese Tabelle beinhaltet alle Informationen, die ein Package benötigt.
+\textbf{Tabelle package} \newline
+Diese Tabelle beinhaltet alle Informationen, die eine Produktklasse benötigt.
 \begin{itemize}
 \item \textbf{id} (Primary Key, Auto Increment, int, NOT NULL) \newline
 Wird für die Beziehung zur Tabelle update benötigt.
 \item \textbf{name} (varchar(50), NOT NULL) \newline
-Das ist der Titel des Package, die Stringgrösse von diesem Attribut wurde auf 50 Zeichen gesetzt.
+Das ist der Titel der Produktklasse, die Stringgrösse von diesem Attribut wurde auf 50 Zeichen gesetzt.
 \item \textbf{typeId} (int, NOT NULL) \newline
 Dies ist der Fremdschlüssel der Tabelle type, er wird für die Beziehung zwischen den Tabellen package und type benutzt.
 \end{itemize}
-\subsubsection{Tabelle type}
-Diese Tabelle beinhaltet alle Typen der Packages. Sie wird benötigt um Redundanz und somit Dateninkonsistenz zu vermeiden. \newline
+\textbf{Tabelle type} \newline
+Diese Tabelle beinhaltet alle Typen der Produktklassen. Sie wird benötigt um Redundanz und somit Dateninkonsistenz zu vermeiden.
 \begin{itemize}
 \item \textbf{id} (Primary Key, int, Auto Increment, NOT NULL) \newline
 Wird für die Beziehung zwischen den Tabellen type und package benötigt. 
 \item \textbf{type} (varchar(10), NOT NULL) \newline 
 Dieses Attribut beinhaltet den Namen des Typs. Die Stringgrösse wird auf 10 gesetzt, da die momentan benötigten Typen kurz sind.
 \end{itemize}
-\subsection{Sofwarearchitektur}
-Das Programm wird mit der Sprache PHP entwickelt. Das ganze Programm wird nach dem MVC Konzept\footnote{MVC nach Vorlesung Webprogrammieren mit PHP\textbackslash MySQL} konzipiert. Das Programm muss folgende Funktionen anbieten.
-\begin{itemize}
-\item Suchen von Updates und Packages
-\item Erstellen, ändern und löschen von Updates
-\item Erstellen, ändern und löschen von Packages
-\item Anzeigen der Packages und den beinhalteten Updates
-\end{itemize}
-Durch diese gewünschten Funktionen entsteht folgendes Architektur.
-\includepdf[pages={1}]{C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf}
-\subsubsection{Model}
-Das Model ist für die SQL Abfragen zuständig. Jede Klasse hat einen Konstruktor und einen Dekonstruktor. Der Konstruktor baut jeweils die Verbindung zur SQL Datenbank auf und der Dekonstruktor baut sie wieder ab.  \newline \newline
-Die anderen Methoden sind jeweils zuständig um die Einträge zu speichern, ändern und zu löschen, sowie benutzerspezifische Suchabfragen durchzuführen und dementsprechend die gefundenen Datensätze zurückzugeben. 
-\subsubsection{Controller}
-Der Controller ist für die Logik des Programm zuständig, der Controller arbeitet mit den POST und GET Werte und weiss dadurch welche Funktion im Model aufgerufen werden muss. Nach der Abfrage der Datenbank durch das Model, hat der Controller Zugriff auf die gewünschten Daten, nun wird anhand der GET und POST Werte entschieden, welche Datei des Packages View aufgerufen werden soll.\newline \newline
-Die Verbindung der Controllerklassen mit den Modelklassen wird einfach implementiert sein. Eine Controllerklasse hat nur Zugriff auf die entsprechende Modelklasse, dies bedeutet das die Controllerklasse \textit{packages} nur Zugriff auf die Modelklasse \textit{class.packages}. \newline \newline 
-Die einzige Klasse, die diese Regel nicht befolgt ist die Klasse \textit{class.resolver}.
-\subsubsection{class.resolver}
-Die Klasse class.resolver hat die wichtigste Funktion in der Logik. Sie überprüft, welche Werte sich im POST und GET befinden, und führt somit die entsprechende Funktion in den entsprechenden Klassen aus. Die Klasse class.resolver wurde aus der Vorlesung Webprogrammieren mit PHP\textbackslash MySQL entnommen.
-\subsubsection{View}
-In der View befinden sich alle Dateien, die für das Visualisieren der Daten zuständig sind. Sie werden im Controller implementiert und stellen die entsprechenden abgefragten Daten grafisch dar.
-\newpage
-\subsubsection{index.php und JavaScript}
-In dieser Datei befindet sich das visuelle Grundgerüst der Web Applikation und ein paar JavaScript Funktionen. Die JavaScript Funktionen sind für die Validierung der Benutzereingabe zuständig. Durch die Implementation der JavaScript Funktionen werden die Eingabefelder vor dem Absenden validiert. Folgende Eingaben werden von JavaScript überprüft.
-\begin{itemize}
-\item \textbf{Suchfelder} \newline
-Es darf nur ein Suchfeld, sobald der Benutzer ein Suchfeld ausgefüllt hat, werden die anderen Felder gräulich hinterlegt und der Benutzer kann die Suche ausführen.
-Das Suchfeld kb darf nur Zahlen beinhalten, falls im Suchfeld andere Zeichen vorhanden sind, wird der Suchknopf deaktiviert und eine Fehlermeldung erscheint.
-Das Erscheinungsdatum darf nur ein Datum haben im Format dd.mm.YYYY haben, ansonsten wird der Suchknopf deaktiviert und eine Fehlermeldung erscheint.
-\item \textbf{Update Management}
-Der Knopf um das Update zu speichern wird erst aktiviert, wenn in den Feldern Name, KB und Erscheinungsdatum gültige Werte vorhanden sind.
-Sobald ein Package für das Update ausgewählt wird, wird der Suchknopf deaktiviert solange der Benutzer das Package wieder abwählt oder ein gültiges Freigabedatum für den Typ dieses Packages eingibt. Diese Validierung gilt für das Eröffnen oder Ändern eines Eintrags.
-\item \textbf{Package Management} 
-Der Knopf um das Package zu speichern wird erst aktiviert, wenn in dem Feld Name ein gültiger Wert eingegeben wurde. Diese Validierung gilt für das Eröffnen oder 
-Ändern eines Eintrags.
-\end{itemize}
-\newpage
-\section{Entwurf}
-Die Webseite besteht aus drei verschiedenen Ansichten. Eine für die Suche, eine um Updates zu mutieren und eine um Packages zu mutieren.
+\subsubsection{GUI}
+Die Webseite besteht aus drei verschiedenen Ansichten. Eine für die Suche, eine um Updates zu mutieren und eine um Produktklassen zu mutieren.
 \begin{figure}[htbp]
 		\centering
 	\includegraphics[width= 10cm]{C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg}
 		\label{fig:Entwurf Suchen}
+		\caption{Website Suche}
 \end{figure}
 \begin{figure}[htbp]
-		\centering
 	\includegraphics[width= 10cm]{C:/inetpub/wwwroot/auswertung/doc/img/entwurf-update.jpg}
 		\label{fig:Entwurf Update}
+		\caption{Website Update Management}
 \end{figure}
 \begin{figure}[htbp]
-		\centering
 	\includegraphics[width= 10cm]{C:/inetpub/wwwroot/auswertung/doc/img/entwurf-package.jpg}
 		\label{fig:Entwurf Package}
+		\caption{Website Package Management}
 \end{figure}
+\newline
+\subsection{Sofwarearchitektur}
+Das Programm wird mit der Sprache PHP entwickelt. Das ganze Programm wird nach dem \gls{MVC} Konzept\footnote{MVC nach Vorlesung Webprogrammieren mit PHP\textbackslash MySQL} konzipiert. Das Programm muss folgende Grundfunktionen anbieten.
+\begin{itemize}
+\item Suchen von Updates und Produktklassen
+\item Erstellen, ändern und löschen von Updates
+\item Erstellen, ändern und löschen von Produktklassen
+\item Anzeigen der Produktklassen und den beinhalteten Updates
+\end{itemize}
+Durch diese gewünschten Funktionen entsteht die auf der nächsten Seite angezeigte Architektur.
+\subsubsection{Model}
+Das Model ist für die SQL Abfragen zuständig. Jede Klasse hat einen Konstruktor und einen Dekonstruktor. Der Konstruktor baut jeweils die Verbindung zur SQL Datenbank auf und der Dekonstruktor baut sie wieder ab.  \newline \newline
+Die anderen Methoden sind jeweils zuständig um die Einträge zu speichern, zu ändern oder zu löschen, sowie benutzerspezifische Suchabfragen durchzuführen und dementsprechend die gefundenen Datensätze zurückzugeben. 
+\subsubsection{Controller}
+Der Controller ist für die Logik des Programm zuständig, der Controller arbeitet mit den POST und GET Werte. Er weiss dadurch, welche Funktion im Model aufgerufen werden muss. Nach der Abfrage der Datenbank durch das Model hat der Controller Zugriff auf die gewünschten Daten. Nun wird anhand der GET und POST Werte entschieden, welche View aufgerufen werden muss.\newline \newline
+Der Austausch zwischen den Controllerklassen und den Modelklassen wird folgendermassen implementiert. Eine Controllerklasse hat nur Zugriff auf die entsprechende Modelklasse, dies bedeutet das die Controllerklasse \textit{packages} nur Zugriff auf die Modelklasse \textit{class.packages}. \newline \newline 
+Die einzige Klasse, die diese Regel nicht befolgt ist die Klasse \textit{resolver}.
+\subsubsection{resolver}
+Die Klasse resolver hat die wichtigste Funktion in der Logik. Sie überprüft, welche Werte sich im POST und GET befinden, und führt somit die entsprechende Funktion in den entsprechenden Klassen aus. Die Klasse resolver wurde aus der Vorlesung Webprogrammieren mit PHP\textbackslash \gls{MySQL} entnommen.
+\includepdf[pages={1}]{C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf}
+\subsubsection{View}
+In der View befinden sich alle Dateien, die für das Visualisieren der Daten zuständig sind. Sie werden im Controller implementiert und stellen die entsprechenden abgefragten Daten grafisch dar.
+\subsubsection{index.php und JavaScript}
+In dieser Datei befindet sich das visuelle Grundgerüst der Web Applikation und ein paar JavaScript Funktionen. Die \gls{JavaScript} Funktionen sind für die Validierung der Benutzereingabe zuständig. Durch die Implementation von JavaScript werden die Eingabedaten vor dem Absenden validiert. Folgende Eingaben werden von JavaScript überprüft.
+\begin{itemize}
+\item \textbf{Suchfelder} \newline
+Es darf nur ein Suchfeld benutzt werden. Sobald der Benutzer ein Suchfeld ausgefüllt hat, werden die anderen Felder gräulich hinterlegt und der Benutzer kann die Suche ausführen.
+Das Suchfeld kb darf nur Zahlen beinhalten, falls im Suchfeld andere Zeichen vorhanden sind, wird der Suchknopf deaktiviert und eine Fehlermeldung erscheint.
+Das Erscheinungsdatum darf nur ein Datum haben im Format dd.mm.YYYY haben, ansonsten wird der Suchknopf deaktiviert und eine Fehlermeldung erscheint.
+\item \textbf{Update Management}
+Der Knopf um das Update zu speichern wird erst aktiviert, wenn in den Feldern Name, KB und Erscheinungsdatum gültige Werte vorhanden sind.
+Sobald eine Produktklasse für das Update ausgewählt wird, wird der Suchknopf solange deaktiviert sein, bis der Benutzer die Produktklasse wieder abwählt oder ein gültiges Freigabedatum eingibt. Diese Validierung gilt für das Eröffnen oder Ändern eines Eintrags.
+\item \textbf{Package Management} 
+Der Knopf um die Produktklasse zu speichern wird erst aktiviert, wenn in dem Feld Name ein gültiger Wert eingegeben wurde. Diese Validierung gilt für das Eröffnen oder 
+Ändern eines Eintrags.
+\end{itemize}
 \newpage
+
+\newpage
+\section{Umsetzung}
+\subsection{Installation}
+Auf der virtuellen Maschine wurde ein IIS Server und ein Microsoft SQL Server Express installiert. Nach der Installation dieser zwei Serverapplikationen, wurde über den Webplattform Installer PHP heruntergeladen und installiert. Zum Schluss wurde der Microsoft SQL Driver for PHP heruntergeladen und installiert.
+\subsection{Vorgehen}
+Nach der Installation der Komponenten wurde die Datenbank und alle Tabellen mittels einer PHP-Datei auf dem Microsoft SQL Server erstellt. Als Vorlage diente der Datenbankentwurf. Daraufhin wurde das Grundgerüst der Applikation mit den entsprechenden Links und CSS Attributen erstellt. Als nächster Schritt wurde die Klasse resolver von der Vorlesung \textit{Webprogrammieren mit PHP\textbackslash MySQL} übernommen. Nun wurden alle Views und alle Controllerklassen erstellt. Nach dem Erstellen der Controllerklassen wurde kurz überprüft, ob die Links richtig verweisen. Die ganzen Verweise werden automatisch erstellt. Im Hintergrund wird beim Klicken eines Links, die Seite index.php neugeladen. Während dem Laden überprüft die Klasse resolver anhand der GET-Werte, welche Funktion der Controllerklassen aufgerufen werden muss, diese implementiert dann die richtige View in die Website. Zum Schluss wurden die Modelklassen mit den entsprechenden Methoden erstellt. \newline \newline
+Mir ist bewusst, dass es sinnvoller wäre zuerst die Modelklassen, dann den Controller und zum Schluss die View Dateien zu erstellen, jedoch arbeite ich lieber visuell und betrachte gerne was ich gerade programmiert habe. \newpage
 \section{Testkonzept}
 \subsection{Teststratgie}
-Aus Zeitgründen werden nur Modelklassen als Units getestet. Die Modelklasse sind hauptsächlich für die Datenbankanbindung und den Datenbankabfragen zuständig. Der Controller wird erst bei dem Intergrationstest herangezogen. Und die View wird zum Schluss bei den Systemtest getestet. Diese Teststrategie mach Sinn, da um die Controllerklassen komplett zu testen, die Resultate aus den Datenbankabfragen benötigt werden. Die View wird nur visuell getestet, da die Viewdateien relativ klein und übersichtlich sind. Der Systemtest überprüft, ob die Anforderungen erfüllt wurden. Zum Schluss wird es noch einen Abnahmetest durch den Auftraggeber geben, dieser Test entscheidet, ob die Software freigegeben werden kann. 
+Aus Zeitgründen werden nur Modelklassen als Units getestet. Die Modelklassen sind hauptsächlich für die Datenbankanbindung und den Datenbankabfragen zuständig. Der Controller wird erst bei dem Intergrationstest herangezogen. Und die View wird zum Schluss bei den Systemtest getestet. Diese Teststrategie mach Sinn, da um die Controllerklassen komplett zu testen, die Resultate aus den Datenbankabfragen benötigt werden. Die View wird nur visuell getestet, da die Views relativ klein und übersichtlich sind. Der Systemtest überprüft, ob die Anforderungen erfüllt wurden. Zum Schluss wird es noch einen Abnahmetest durch den Auftraggeber geben, dieser Test entscheidet, ob die Software freigegeben werden kann. 
 \subsection{Testwerkzeug}
-Es wurde versucht, das PHPUnit Modul als Testwerkzeug in die Applikation zu implementieren, jedoch hat das nicht wie gewünscht geklappt. Somit wurde eine PHP Klasse mit manuellen assert-Methoden erstellt. Es wurde ein eigenes Testwerkzeug erstellt, welches durch die cmd aufgerufen werden kann, und die Testresultate in der cmd ausgibt. Dieses Testwerkzeug wird für die Unit und Integrationstests benutzt.
+Es wurde versucht, das \gls{PHPUnit} Framework als Testwerkzeug in die Anwendung zu implementieren, jedoch hat das nicht wie gewünscht geklappt. Somit wurde eine PHP Klasse mit manuellen assert-Methoden erstellt. Es wurde ein eigenes Testwerkzeug erstellt, welches durch die \gls{cmd} aufgerufen werden kann, und die Testresultate in der cmd ausgibt. Dieses Testwerkzeug wird für die Unit und Integrationstests benutzt.
 \subsection{Unit Tests der Modelklassen}
-In der Modelklasse werden alle Methoden vereinzelt getestet, die benötigten GET- und POST-Werte werden mit Dummy Werte ausgeführten. In der untenstehenden Tabelle werden alle benötigten Tests aufgelistet. Die Resultatet werden im Nachhinein in der Tabelle eingetragen. \newline \newline
+In der Modelklasse werden alle Methoden vereinzelt getestet, die benötigten GET- und POST-Werte werden mit Dummy Werte gefüllt. In der untenstehenden Tabelle werden alle benötigten Tests aufgelistet. Die Resultatet werden im Nachhinein in der Tabelle eingetragen. \newline \newline
 \begin{tabular}{|l|l|p{4cm}|p{3cm}|}
 \hline
 \textbf{Name} & \textbf{Wo} & \textbf{Was wird getestet} & \textbf{Resultat} \\ \hline
 constructTest() & Allen Klassen & Ob die Datenbankverbindung aufgebaut werden kann & Erwartet: True \newline Erfolgreich \\ \hline
 findIdTest() & mdl\_updates & Mit Hilfe eines GET-Werts wird ein Updates gesucht. & Erwartet: NotNull \newline Erfolgreich \\ \hline
-gpTest() & mdl\_updates & Es wird nach allen Packages gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
-gopTest() & mdl\_updates & Mit Hilfe eines GET-Werts werden alle Packages, die nicht für das Update sind gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
+gpTest() & mdl\_updates & Es wird nach allen Produktklassen gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
+gopTest() & mdl\_updates & Mit Hilfe eines GET-Werts werden alle Produktklassen, die nicht für das Update sind gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
 \end{tabular}
 \newpage
 \begin{tabular}{|p{3cm}|l|p{4cm}|p{3cm}|}
 \hline
 \textbf{Name} & \textbf{Wo} & \textbf{Was wird getestet} & \textbf{Resultat} \\ \hline
-pTuTest() & mdl\_updates & Mit Hilfe eines GET-Werts werden alle Packages für das Update gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
+pTuTest() & mdl\_updates & Mit Hilfe eines GET-Werts werden alle Produktklassen für das Update gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
 saveTest() & mdl\_updates & Es wird ein neuer Datensatz gespeichert & Erwartet: True \newline Erfolgreich \\ \hline
 updateTest() & mdl\_updates & Es wird ein vorhandener Datensatz geändert & Erwartet: True \newline Erfolgreich \\ \hline
 deleteTest() & mdl\_updates & Es wird ein vorhandener Datensatz gelöscht & Erwartet: True \newline Erfolgreich \\ \hline
-gspTest() & mdl\_packages & Mit Hilfe eines GET-Werts wird ein Package gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
+gspTest() & mdl\_packages & Mit Hilfe eines GET-Werts wird eine Produktklasse gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
 saveTest() \newline updateTest() \newline deleteTest() & mdl\_packages & Gleiches Tests wie bei den Methoden der Update-Klasse & Erwartet: True \newline Erfolgreich \\ \hline
-uTpTest() & mdl\_packages & Mit Hilfe eines GET-Werts werden alle Updates für das Package gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
-getTypesTest() & mdl\_packages & Mit Hilfe eines GET-Werts wird der Typ des Packages ermittelt & Erwartet: NotNull \newline Erfolgreich \\ \hline
+uTpTest() & mdl\_packages & Mit Hilfe eines GET-Werts werden alle Updates für die Produktklasse gesucht & Erwartet: NotNull \newline Erfolgreich \\ \hline
+getTypesTest() & mdl\_packages & Mit Hilfe eines GET-Werts wird der Typ der Produktklasse ermittelt & Erwartet: NotNull \newline Erfolgreich \\ \hline
 fAuTest() & mdl\_search & Es sollen alle Updates zurückgegeben werden & Erwartet: NotNull \newline Erfolgreich \\ \hline
-fspTest() & mdl\_search & Mit Hilfe eines Suchbegriffes alle betroffenen Packages zurückgeben & Erwartet: NotNull \newline Erfolgreich \\ \hline
+fspTest() & mdl\_search & Mit Hilfe eines Suchbegriffes alle betroffenen Produktklassen zurückgeben & Erwartet: NotNull \newline Erfolgreich \\ \hline
 gatTest() & mdl\_search & Alle Typen zurückgegeben & Erwartet: NotNull \newline Erfolgreich \\ \hline
 \end{tabular}
 \newline \newline \newline
-Das sind die wichtigsten Test die für diese Applikation benötigt werden, man könnte noch Tests implementieren, die falsche Werte zurückgeben müssen, jedoch wurde wegen Zeitgründen auf diese Tests verzichtet.
+Das sind die wichtigsten Test, die für diese Applikation benötigt werden. Man hätte noch Tests implementieren, die falsche Werte zurückgeben müssen, jedoch wurde wegen Zeitgründen auf diese Tests verzichtet.
 \newpage
 \subsection{Integrationstests}
-Die Integrationstest koppeln das Model und den Controller zusammen und überprüfen, ob das Zusammenspiel der beiden Komponenten auf Eingaben richtig reagiert. Der Aufbau ist bei jedem Integrationstest der Gleiche. Die Klasse class.resolver wird mit verschiedenen Eingaben aufgerufen und überprüft, ob Sie die richtigen Klassen und Methoden im Controller und im Model aufrufen. Zum Schluss wird überprüft, ob der Controller die richtigen Werte der View übergibt. \newline \newline
-Diese Tests sind sehr aufwendig und nur teilweise implementiert worden. Auf die einzelnen Tests wird nicht weiter eingegangen, da diese wie schon vorhin gesagt, im Aufbau sehr ähnlich sind.
+Die Integrationstest koppeln das Model und den Controller zusammen und überprüfen, ob das Zusammenspiel der beiden Komponenten auf Eingaben richtig reagiert. Der Aufbau ist bei jedem Integrationstest der Gleiche. Die Klasse resolver wird mit verschiedenen Eingaben aufgerufen und überprüft, ob Sie die richtigen Klassen und Methoden im Controller und im Model aufrufen. Zum Schluss wird überprüft, ob der Controller die richtigen Werte der View übergibt. \newline \newline
+Diese Tests sind sehr aufwendig und noch nicht implementiert worden. Auf die einzelnen Tests wird nicht weiter eingegangen, da diese wie schon vorhin gesagt, im Aufbau sehr ähnlich sind.
 \subsection{Systemtest}
 Der Systemtest wird genutzt um zu überprüfen, ob alle Anforderungen erfüllt wurden. Bei dem Systemtest wird die Applikation aus den Augen des Auftraggebers betrachtet und dadurch entschieden, ob die Anforderung erfüllt wurde oder nicht.
 \newline \newline
-\textbf{Speichern, Ändern und Löschen von Updates und Packages} \newline
-Der Benutzer kann in jeweils zwei verschiedenen Masken Updates und Packages hinzufügen, ändern oder löschen. Eingabefelder die ein bestimmtes Format benötigen, werden vor dem Absenden überprüft. \newline \newline
-\textbf{Suchen von Updates und Packages} \newline
-Diese Anforderung wurde erfüllt, der Benutzer kann nach Updates und Packages suchen. Die Sucheingaben werden vor dem Absenden auf Richtigkeit überprüft. Somit kann der Benutzer keine Suchanfrage starten, wenn er nichts eingegeben hat oder unzulässige Zeichen benutzt. \newline \newline
-\textbf{Dem Package einen Typ zuordnen} \newline
-Der Benutzer muss jedem aufgenommenen Package einen Typ zuordnen, da jedes Packages einem Typ zugeordnet werden muss. Diese Aktion wird in der Package Management Maske gemacht. \newline \newline
-\textbf{Updates einen bestimmten Package aufzeigen} \newline
-Sobald der Benutzer ein Package öffnet werden auf der unteren Hälfe der Seite die Updates, die sich in diesem Package befinden, aufgezeigt. \newline \newline
+\textbf{Speichern, Ändern und Löschen von Updates und Produktklasse} \newline
+Der Benutzer kann in zwei verschiedenen Masken Updates und Produktklassen hinzufügen, ändern oder löschen. Eingabefelder die ein bestimmtes Format benötigen, werden vor dem Absenden überprüft. \newline \newline
+\textbf{Suchen von Updates und Produktklassen} \newline
+Diese Anforderung wurde erfüllt, der Benutzer kann nach Updates und Produktklassen suchen. Die Sucheingaben werden vor dem Absenden auf Richtigkeit überprüft. Somit kann der Benutzer keine Suchanfrage starten, wenn er nichts eingegeben hat oder unzulässige Zeichen benutzt. \newline \newline
+\textbf{Der Produktklasse einen Typ zuordnen} \newline
+Der Benutzer muss jeder aufgenommenen Produktklasse einen Typ zuordnen, da jede Produktklasse einem Typ zugeordnet werden muss. Diese Aktion wird in der Package Management Maske gemacht. \newline \newline
+\textbf{Updates einer bestimmten Produktklasse aufzeigen} \newline
+Sobald der Benutzer eine Produktklasse öffnet werden auf der unteren Hälfe der Seite die Updates, die sich in dieser Produktklasse befinden, aufgezeigt. \newline \newline
 \textbf{Verknüpfung Updates Packages} \newline
-Diese Anforderung wurde erfüllt. Im Update Management kann der Benutzer das Update jederzeit einem Package hinzufügen oder wieder entfernen, ganz egal ob das Update schon vorhanden ist oder nicht. \newpage
+Diese Anforderung wurde erfüllt. Im Update Management kann der Benutzer das Update jederzeit einer Produktklasse hinzufügen oder wieder entfernen, ganz egal ob das Update schon vorhanden ist oder nicht. \newpage
 \textbf{Der Titel eines Updateeintrags darf nicht leer sein} \newline
 Diese Anforderung wurde mit Hilfe von JavaScript erfüllt, solange der Titel leer ist, ist der Knopf um den Eintrag zu speichern oder zu ändern deaktiviert.
 \newline \newline
@@ -279,26 +311,26 @@ Diese Anforderung wurde mit Hilfe von JavaScript erfüllt, solange der Titel leer
 Diese Anforderung wurde mit Hilfe von JavaScript erfüllt, solange der Wert der KB Nummer nicht numerisch ist, ist der Knopf um den Eintrag zu speichern oder zu ändern deaktiviert. \newline \newline
 \textbf{Veröffentlichungsdatum darf nicht leer sein} \newline
 Diese Anforderung wurde mit Hilfe von JavaScript erfüllt, solange das Feld des Veröffentlichungsdatum leer ist, ist der Knopf um den Eintrag zu speichern oder zu ändern deaktiviert. \newline \newline
-\textbf{Update kann mehreren Packages zugeteilt werden} \newline
-Diese Anforderung wurde erfüllt. Im Update Management werden alle Packages, egal ob das Update dem Package zugeteilt wurde oder nicht, angezeigt. Der Benutzer kann jeweils durch Auswahlboxen auswählen, welchem Package das Update zugeteilt ist und welchem nicht. \newline \newline
-\textbf{Update kann keinem Package zugeteilt sein} \newline
-Diese Anforderung wurde erfüllt. Ein Update ohne Packagezuteilung gespeichert werden. \newline \newline
+\textbf{Update kann mehreren Produktklassen zugeteilt werden} \newline
+Diese Anforderung wurde erfüllt. Im Update Management werden alle Produktklassen, egal ob das Update der Produktklasse zugeteilt wurde oder nicht, angezeigt. Der Benutzer kann jeweils durch Auswahlboxen auswählen, welchen Produktklassen das Update zugeteilt ist und welchen nicht. \newline \newline
+\textbf{Update kann keiner Produktklasse zugeteilt sein} \newline
+Diese Anforderung wurde erfüllt. Ein Update kann ohne einer Produktklasse zugeteilt sein, gespeichert werden. \newline \newline
 \textbf{Rückzug eines Updates} \newline
 Diese Anforderung wurde erfüllt. Für diese Anforderung wurde ein eigenes Feld definiert. Sobald ein Update von Microsoft zurückgezogen wurde, kann man das Datum in diesem definierten Feld eingeben. \newline \newline
 \textbf{Datumsformat} \newline
 Diese Anforderung wurde erfüllt. Nach dem Senden der Benutzereingabe wird überprüft, ob das Datumsformat gültig ist. Wenn das Format gültig ist, wird der Befehl ausgeführt, ansonsten wird der Benutzer auf das falsche Format hingewiesen.
 \newline \newline
-\textbf{Packagezuteilung und Freigabedatum} \newline
-Diese Anforderung wurde teilweise erfüllt. Sobald der Benutzer ein Freigabedatum eines Updates setzt und keine Packages auswählt, wird der Knopf um den Datensatz zu speichern deaktiviert. \newline \newline
-\textbf{Korrektes Speichern eines Packages} \newline
-Diese Anforderung wurde erfüllt. Ein Package kann gespeichert werden, sobald ein Titel eingetragen worden ist und ein Typ ausgewählt wurde, ansonsten ist der Knopf um das Package zu speichern oder zu ändern deaktiviert. 
+\textbf{Produktklassenzuteilung und Freigabedatum} \newline
+Diese Anforderung wurde teilweise erfüllt. Sobald der Benutzer ein Freigabedatum eines Updates setzt und keine Produktklasse auswählt, wird der Knopf um den Datensatz zu speichern deaktiviert. \newline \newline
+\textbf{Korrektes Speichern einer Produktklasse} \newline
+Diese Anforderung wurde erfüllt. Eine Produktklasse kann gespeichert werden, sobald ein Titel eingetragen ist und ein Typ ausgewählt wurde, ansonsten ist der Knopf um die Produktklasse zu speichern oder zu ändern deaktiviert. 
 \newpage
 \section{Fazit}
 \subsection{Review}
 Der erste Teil des Projekts wurde vollständig implementiert und die Applikation, kann sobald die Dateien auf die produktive Umgebung verschoben werden, genutzt werden.
-Das ganze Projekt war relativ einfach einzuschätzen, da nur Anforderungen und keine Wünsche vom Auftraggeber gegeben wurden. Jedoch habe ich die Zeit ein wenig unterschätzt, da ich nicht so gewandt bin mit PHP. Zusätzlich musste ich mich noch Leider wurde nicht das gesamte Testkonzept implementiert, da ich zwar PHPUnit installieren konnte, jedoch PHPUnit keine Teste durchführte. Als das Suchen einer Lösung zu zeitintensiv wurde, habe ich mich entschieden manuelle Testklassen zu schreiben, die in der CMD das Resultat der Tests ausgeben.
+Das ganze Projekt war relativ einfach einzuschätzen, da nur Anforderungen und keine Wünsche vom Auftraggeber gegeben wurden. Jedoch habe ich die Zeit ein wenig unterschätzt, da ich nicht so gewandt bin mit PHP. Leider wurde nicht das gesamte Testkonzept implementiert, da ich zwar PHPUnit installieren konnte, jedoch PHPUnit keine Tests durchführte. Als das Suchen einer Lösung zu zeitintensiv wurde, habe ich mich entschieden manuelle Testklassen zu schreiben, die in der cmd das Resultat der Tests ausgeben.
 \newline \newline
-Die Kombination PHP, IIS und MSSQL hat sich als nicht optional bewiesen. Die Installation von PHP auf dem IIS Server kann zu Komplikationen führen. Zusätzlich benötigt man einen zusätzlichen Treiber für die Kombination von PHP und dem MSSQL Server. Die Syntax von PHP\textbackslash MSSQL unterscheidet sich teilweise von der Syntax PHP\textbackslash MySQL. Zusätzlich gibt es im Internet nicht viele Hilfestellungen zur Kombination von PHP und MSSQL, dadurch kann die Suche nach einer Problemlösung recht lange dauern. \newline \newline
+Die Kombination PHP, IIS und \gls{MSSQL} hat sich als nicht optional bewiesen. Die Installation von PHP auf dem IIS Server kann zu Komplikationen führen. Zusätzlich benötigt man einen zusätzlichen Treiber für die Kombination von PHP und dem MSSQL Server. Die Syntax von PHP\textbackslash MSSQL unterscheidet sich teilweise von der Syntax PHP\textbackslash MySQL. Zusätzlich gibt es im Internet nicht viele Hilfestellungen zur Kombination von PHP und MSSQL, dadurch kann die Suche nach einer Problemlösung recht lange dauern. \newline \newline
 Der fertige erste Teil des Projekt wurde vom Auftragsgeber kontrolliert und angenommen.
 \subsection{Ausblick}
 Es stehen noch folgende offene Arbeiten aus:
