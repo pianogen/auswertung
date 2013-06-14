@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.30)  10 JUN 2013 23:50
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.12.30)  11 JUN 2013 20:47
 entering extended mode
 **PHP.tex
 (C:\inetpub\wwwroot\auswertung\doc\PHP.tex
@@ -473,17 +473,17 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 [11 <C:/inetpub/wwwroot/auswertung/doc/img/entwurf-suchen.jpg>] [12 <C:/inetpub
 /wwwroot/auswertung/doc/img/entwurf-update.jpg> <C:/inetpub/wwwroot/auswertung/
 doc/img/entwurf-package.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 223--225
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--229
+Underfull \hbox (badness 10000) in paragraph at lines 227--230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--229
+Underfull \hbox (badness 10000) in paragraph at lines 227--230
 
  []
 
@@ -495,93 +495,103 @@ ype pdf)
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.
-pdf, page1 used on input line 231.
+pdf, page1 used on input line 230.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf Graphic file (t
 ype pdf)
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.
-pdf, page1 used on input line 231.
+pdf, page1 used on input line 230.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf Graphic file (t
 ype pdf)
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.
-pdf, page1 used on input line 231.
+pdf, page1 used on input line 230.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf Graphic file (t
 ype pdf)
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.
-pdf, page1 used on input line 231.
+pdf, page1 used on input line 230.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf Graphic file (t
 ype pdf)
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.
-pdf, page1 used on input line 231.
+pdf, page1 used on input line 230.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 
 [14 <C:/inetpub/wwwroot/auswertung/doc/img/Klassendiagramm.pdf>] [15]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 255.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 253.
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
 
  []
 
 [16]
-Underfull \hbox (badness 4168) in paragraph at lines 267--267
+Underfull \hbox (badness 4168) in paragraph at lines 266--266
 \OT1/cmr/m/n/10 dung auf-ge-baut wer-den
  []
 
 
-Underfull \hbox (badness 7451) in paragraph at lines 268--268
+Underfull \hbox (badness 7451) in paragraph at lines 267--267
 []\OT1/cmr/m/n/10 Mit Hil-fe ei-nes GET-
  []
 
 
-Underfull \hbox (badness 7451) in paragraph at lines 270--270
+Underfull \hbox (badness 7451) in paragraph at lines 269--269
 []\OT1/cmr/m/n/10 Mit Hil-fe ei-nes GET-
  []
 
 
-Underfull \hbox (badness 1859) in paragraph at lines 270--270
+Underfull \hbox (badness 1859) in paragraph at lines 269--269
 \OT1/cmr/m/n/10 Werts wer-den al-le Pro-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--272
+Underfull \hbox (badness 10000) in paragraph at lines 262--271
 
  []
 
 
-Overfull \hbox (29.08618pt too wide) in paragraph at lines 263--272
+Overfull \hbox (29.08618pt too wide) in paragraph at lines 262--271
 [] 
  []
 
 [17]
-Underfull \hbox (badness 7451) in paragraph at lines 276--276
+Underfull \hbox (badness 7451) in paragraph at lines 275--275
 []\OT1/cmr/m/n/10 Mit Hil-fe ei-nes GET-
  []
 
 
-Underfull \hbox (badness 1859) in paragraph at lines 276--276
+Underfull \hbox (badness 1859) in paragraph at lines 275--275
 \OT1/cmr/m/n/10 Werts wer-den al-le Pro-
  []
 
 
-Underfull \hbox (badness 7451) in paragraph at lines 280--280
+Underfull \hbox (badness 7451) in paragraph at lines 279--279
 []\OT1/cmr/m/n/10 Mit Hil-fe ei-nes GET-
  []
 
 
-Underfull \hbox (badness 7064) in paragraph at lines 281--281
+Underfull \hbox (badness 7064) in paragraph at lines 280--280
 \OT1/cmr/m/n/10 Me-tho-den der Update-
+ []
+
+
+Underfull \hbox (badness 7451) in paragraph at lines 281--281
+[]\OT1/cmr/m/n/10 Mit Hil-fe ei-nes GET-
  []
 
 
@@ -590,150 +600,145 @@ Underfull \hbox (badness 7451) in paragraph at lines 282--282
  []
 
 
-Underfull \hbox (badness 7451) in paragraph at lines 283--283
-[]\OT1/cmr/m/n/10 Mit Hil-fe ei-nes GET-
- []
-
-
-Underfull \hbox (badness 4205) in paragraph at lines 284--284
+Underfull \hbox (badness 4205) in paragraph at lines 283--283
 []\OT1/cmr/m/n/10 Es sol-len al-le Up-da-tes
  []
 
 
-Overfull \hbox (45.62769pt too wide) in paragraph at lines 273--290
+Overfull \hbox (45.62769pt too wide) in paragraph at lines 272--289
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--290
+Underfull \hbox (badness 10000) in paragraph at lines 272--289
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--290
+Underfull \hbox (badness 10000) in paragraph at lines 272--289
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 292--294
+Underfull \hbox (badness 10000) in paragraph at lines 291--293
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--306
+Underfull \hbox (badness 10000) in paragraph at lines 294--305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--306
+Underfull \hbox (badness 10000) in paragraph at lines 294--305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--306
+Underfull \hbox (badness 10000) in paragraph at lines 294--305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--306
+Underfull \hbox (badness 10000) in paragraph at lines 294--305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--306
+Underfull \hbox (badness 10000) in paragraph at lines 294--305
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 307--327
+Underfull \hbox (badness 10000) in paragraph at lines 306--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--327
+Underfull \hbox (badness 10000) in paragraph at lines 306--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--327
+Underfull \hbox (badness 10000) in paragraph at lines 306--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--327
+Underfull \hbox (badness 10000) in paragraph at lines 306--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--327
+Underfull \hbox (badness 10000) in paragraph at lines 306--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--327
+Underfull \hbox (badness 10000) in paragraph at lines 306--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--327
+Underfull \hbox (badness 10000) in paragraph at lines 306--326
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--327
+Underfull \hbox (badness 10000) in paragraph at lines 306--326
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 330--335
+Underfull \hbox (badness 10000) in paragraph at lines 329--334
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--335
+Underfull \hbox (badness 10000) in paragraph at lines 329--334
 
  []
 
 [21]
-<C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, id=97, page=1, 845.1575pt x
+<C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, id=98, page=1, 845.1575pt x
  597.23125pt>
 File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
 
  <use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
-e1 used on input line 342.
+e1 used on input line 341.
 (pdftex.def)             Requested size: 845.15544pt x 597.22978pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
 
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
-e1 used on input line 342.
+e1 used on input line 341.
 (pdftex.def)             Requested size: 614.40643pt x 434.1708pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
 
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
-e1 used on input line 342.
+e1 used on input line 341.
 (pdftex.def)             Requested size: 614.40643pt x 434.1708pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
 
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
-e1 used on input line 342.
+e1 used on input line 341.
 (pdftex.def)             Requested size: 614.40643pt x 434.1708pt.
 File: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf Graphic file (type pdf)
 
 
 <use C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page 1>
 Package pdftex.def Info: C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, pag
-e1 used on input line 342.
+e1 used on input line 341.
 (pdftex.def)             Requested size: 614.40643pt x 434.1708pt.
  [22 <C:/inetpub/wwwroot/auswertung/doc/img/Planung.pdf, page is rotated 90 deg
 rees>]
-Underfull \hbox (badness 10000) in paragraph at lines 355--357
+Underfull \hbox (badness 10000) in paragraph at lines 354--356
 []\OT1/cmr/m/n/10 Microsoft SQL Ser-ver Dri-ver for PHP:
  []
 
@@ -756,9 +761,9 @@ c/amsfonts/cm/cmr8.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb
 ><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmti10.pfb>
-Output written on PHP.pdf (23 pages, 538256 bytes).
+Output written on PHP.pdf (23 pages, 445137 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
+ 153 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

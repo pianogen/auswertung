@@ -16,7 +16,7 @@
 \contentsline {subsection}{\numberline {3.2}Sofwarearchitektur}{13}
 \contentsline {subsubsection}{\numberline {3.2.1}Model}{13}
 \contentsline {subsubsection}{\numberline {3.2.2}Controller}{13}
-\contentsline {subsubsection}{\numberline {3.2.3}resolver}{13}
+\contentsline {subsubsection}{\numberline {3.2.3}resolver}{15}
 \contentsline {subsubsection}{\numberline {3.2.4}View}{15}
 \contentsline {subsubsection}{\numberline {3.2.5}index.php und JavaScript}{15}
 \contentsline {section}{\numberline {4}Umsetzung}{16}
