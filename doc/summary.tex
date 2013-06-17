@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LO]{Seminar: Webprojekt mit PHP und MySQL}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{Gennaro Piano}
+\fancyfoot[R]{\today}
+\renewcommand{\footrulewidth}{0.4pt}
+\begin{document}
+\section*{Automatische WSUS Auswertung}
+Die KMU IT Management AG bietet den Kunden die Möglichkeit, die Windows Update über den WSUS Server herunterzuladen und zu installieren. Durch dieses Angebot muss sich der Kunde nicht mehr über die Installation der Updates kümmern. Die WSUS Datenbank ist in den Jahren gewachsen und so wurden mit der Zeit Produktklassen eingeführt. Eine Produktklasse ist ein Container der Computerobjekte beinhaltet. Den Produktklassen kann man die Windows Updates zuteilen, dadurch werden auf den Clients nur die Updates installiert, die der dazugehörigen Produktklasse zugeteilt worden sind. Ein Client kann selbstverständlich mehreren Produktklassen zugeteilt werden. Es gibt Produktklassen die fast alle Clients beinhalten, als Beispiel wäre zum Beispiel die Produktklasse Office 2010 zu nennen. Diese Konfiguration ermöglicht einen sehr guten Einblick des momentanen Zustands. Die Auswertung der Updates wird hingegen immer komplizierter und dauert jedes Jahr länger. Die Auswertung wird jeden Monat manuell erstellt. Die Auswertung ist relativ mühsam und kostet pro Quartal ein bis zwei Arbeitstage.
+Für jede Produktklasse muss das Update neuaufgenommen werden, danach muss bei jedem Kunde überprüft werden wie viele Updates letztes Quartal installiert worden sind.
+\newline \newline
+Diese mühsame Arbeit wird sich ab nächsten Monat durch eine Webanwendung massiv verkürzt. Momentan läuft die Anwendung in einer Testumgebung. Sie bringt folgende Vorteile:
+\begin{itemize}
+\item Speichern von Updates und Produktklassen in einer Datenbank über das Webinterface
+\item Das aufgenommene Update kann über das Webinterface an mehrere Produktklassen zugeteilt werden. Dies vermeidet Dateninkonsistenz und unnötige Redundanz
+\item Suchen und Bearbeiten von Updates und Produktklassen über das Webinterface
+\item Ein Update wird mit allen nötigen Attributen abgespeichert. Ohne ein Erscheinungsdatum, Knowledgbase Nummer oder Titel wird ein Update nicht in der Datenbank aufgenommen. Dadurch sinkt die Wahrscheinlichkeit auf Dateninkonsistenz.
+\end{itemize}
+Bevor die Webanwendung produktiv genutzt werden kann, muss die Kundenmaske in der Webanwendung implementiert werden. Die Kundenmaske ermöglicht es neue Kunden aufzunehmen und Ihnen die benutzen Produktklassen zuzuteilen. Nach dieser Erweiterung müssen neu erschienene Updates nur einmal aufgenommen werden, den entsprechende Produktklassen zugeteilt werden. Die Auswertung der Daten wird durch SQL Statements vollständig automatisiert sein. Man rechnet mit einer Zeitersparnis von 1.5 Tagen pro Quartal. 
+
+\end{document}
