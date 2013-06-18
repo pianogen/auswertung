@@ -31,11 +31,6 @@ class mdl_packagesTest {
 			$this->assert->assertTrue("delete", $this->mdl->delete());
 		}
 		
-		function deleteFalseIdTest() {
-			$_GET['id'] = 1000;
-			$this->assert->assertFalse("deleteFalseId", $this->mdl->delete());
-		}
-		
 		function getTypesTest() {
 			$this->assert->assertNotNull("getTypes", $this->mdl->getTypes());
 		}

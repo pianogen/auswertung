@@ -80,8 +80,24 @@ if ($_GET['ctrl'] === "packages"){
 			 	if (document.getElementById('release').value) {
 			 		document.getElementById('kb').disabled = true;
 			 		document.getElementById('titel').disabled = true;
-			 		document.getElementById('error').style.visibility = 'hidden';
-			 		document.getElementById('suchen').disabled = false;
+			 		if (document.getElementById('release').value){
+						var datum = document.getElementById('release').value.split('.');
+						if (datum.length != 3) {
+							document.getElementById('error').style.visibility = 'visible';
+						 	document.getElementById('error').innerText = 'Ungültiges Datum';
+						}
+						else {
+							var kontrolldatum= new Date(datum[2],datum[1],datum[0]);
+							if (kontrolldatum.getDate()==datum[0] && kontrolldatum.getMonth()==datum[1] && kontrolldatum.getFullYear()==datum[2]) {
+								document.getElementById('error').style.visibility = 'hidden';
+						 		document.getElementById('suchen').disabled = false;
+							}
+							else {
+								document.getElementById('error_add').style.visibility = 'visible';
+							 	document.getElementById('error_add').innerText = 'Ungültiges Datum';
+							}
+						}
+					}
 				 }
 			 	else {
 				 	document.getElementById('kb').disabled = false;
@@ -100,10 +116,28 @@ if ($_GET['ctrl'] === "packages"){
 		 	}
 		 	function submitButton() {
 			 	var firstCheck = false;
+			 	var dateCheck = false;
 			 	var zahl = parseInt(document.getElementById('kb_add').value);
 			 	if (document.getElementById('name_add').value && document.getElementById('kb_add').value && document.getElementById('release_add').value) {
 				 	if (zahl == document.getElementById('kb_add').value) {
 					 	firstCheck = true;
+					 	if (document.getElementById('release_add').value){
+							var datum = document.getElementById('release_add').value.split('.');
+							if (datum.length != 3) {
+								document.getElementById('error_add').style.visibility = 'visible';
+							 	document.getElementById('error_add').innerText = 'Ungültiges Datum';
+							}
+							else {
+								var kontrolldatum= new Date(datum[2],datum[1],datum[0]);
+								if (kontrolldatum.getDate()==datum[0] && kontrolldatum.getMonth()==datum[1] && kontrolldatum.getFullYear()==datum[2]) {
+									dateCheck = true;
+								}
+								else {
+									document.getElementById('error_add').style.visibility = 'visible';
+								 	document.getElementById('error_add').innerText = 'Ungültiges Datum';
+								}
+							}
+						}
 				 		var okayclient = false;
 					 	var l = document.getElementsByClassName('clt[]').length;
 						if (document.getElementById('approve_clt').value) {
@@ -142,7 +176,7 @@ if ($_GET['ctrl'] === "packages"){
 			 		document.getElementById('error_add').style.visibility = 'visible';
 				 	document.getElementById('error_add').innerText = 'Die Felder Namen, KB und Release sind Pflichtfelder';
 			 	}
-			 	if (okayclient == true && firstCheck == true && okaysrv == true) {
+			 	if (okayclient == true && firstCheck == true && okaysrv == true && dateCheck == true) {
 				 	document.insert.submit();
 			 	}
 		 	}				 	

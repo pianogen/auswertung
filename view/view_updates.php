@@ -27,7 +27,12 @@ $url = "index.php?ctrl=updates&action=$button";
 		<th colspan="2" class="colspan"><input type="text" value="<?php echo $updates[4]; ?>" name="decline" id="decline_add"></th>
 	</tr>
 	<tr>
-		<th colspan="2" class="colspan"><div id="error_add" style="visibility: hidden;"></div></th>
+		<th colspan="2" class="colspan"><div id="error_add" style="visibility: hidden; overflow:hidden"></div></th>
+<?php 	if ($res) { ?>
+		<th colspan="2" class="colspan"><div style="font-size: 12px; color:#527DE5;">Datensatz erfolgreich gespeichert</div></th>
+		<?php 
+		}
+	?>
 		<td align="right">
 			<input type="button" value="<?php echo $button ?>" id="add" onClick="submitButton();">
 			<input type="button" onclick="window.location.href = 'index.php';" value="Zurück">

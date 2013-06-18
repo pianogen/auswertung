@@ -25,17 +25,16 @@ class updates {
 	
 	public function Speichern() {
 		$res = $this->update->save();
-		$this->select();
+		include_once 'view/resultat.php';
 	}
 	
 	public function update() {
 		$res = $this->update->update();
-		$this->select();
+		include_once 'view/resultat.php';
 	}
 	
 	public function delete() {
 		$res = $this->update->delete();
-		header("Location: index.php?ctrl=search");
-		exit(0);
+		include_once 'view/resultat.php';
 	}
 }

@@ -102,7 +102,6 @@ class mdl_packages {
 		else {
 			die (print_r(sqlsrv_errors(), true));
 		}
-		echo $res;
 		return $res;
 	}
 	/* -------------------------------------------------------------------------------

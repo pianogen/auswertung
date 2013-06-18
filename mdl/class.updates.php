@@ -74,6 +74,7 @@ class mdl_updates {
 		if ($res === false){
 			die (print_r (sqlsrv_errors(), true));
 		}
+		return true;
 	}
 	
 	public function update(){
@@ -92,7 +93,7 @@ class mdl_updates {
 				$params = array($appr, $_GET['id']);
 				sqlsrv_query($this->con,$delete,$params);
 			}
-			return $res;
+			return true;
 	}
 	
 	private function emptyDates(){
@@ -119,7 +120,7 @@ class mdl_updates {
 		else {
 			die (print_r(sqlsrv_errors(), true));
 		}
-		return "Update wurde erfolgreicht gelöscht";	
+		return true;	
 	}
 		
 	public function __destruct(){

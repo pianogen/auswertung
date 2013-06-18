@@ -24,17 +24,17 @@ class packages {
 	
 	public function speichern() {
 		$res = $this->package->save();
-		header("Location: index.php?ctrl=packages");
+		include_once 'view/resultat.php';
 	}
 	
 	public function update() {
 		$res = $this->package->update();
-		header("Location: index.php?ctrl=packages");
+		include_once 'view/resultat.php';
 	}
 	
 	public function delete() {
 		$delete = $this->package->delete();
-		header("Location: index.php?ctrl=search");
+		include_once 'view/resultat.php';
 	}
 }
 

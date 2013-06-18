@@ -1,0 +1,1 @@
+<p style="color: #527DE5;">&Auml;nderung erfolgreich durchgeführt</p>
